@@ -1,12 +1,14 @@
-import React from 'react';
+import React from 'react'
 import styles from './MainPage.module.css'
+import { Footer } from '../../components/Footer'
+import { Header } from '../../components/Header'
 
 const MainPage = () => {
     return (
         <div>
-            hui
+            <h1></h1>
         </div>
-    );
-};
+    )
+}
 
-export default MainPage;
+export default MainPage
