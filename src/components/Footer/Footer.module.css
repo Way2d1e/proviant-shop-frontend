@@ -1,0 +1,39 @@
+.footerWrap {
+    width: 100%;
+    font-family: 'MontserratRegular';
+}
+
+.feedback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85px;
+    background: #D3EAC3;
+}
+
+.feedback p {
+    font-size: 20px;
+}
+
+.feedback a {
+    color: #558203;
+    text-decoration: none;
+}
+
+.footerInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 79.86%;
+    padding: 15px 0;
+    margin: auto;
+}
+
+.footerInfo a {
+    text-decoration: none;
+}
+
+.footerInfo p {
+    color: #898989;
+    font-size: 15px;
+}
