@@ -17,14 +17,14 @@ export const CatalogPage = () => {
         {id: 11, img: 'src/Assets/Images/other.png', title: 'Прочее' },
     ]
 
-    const createCatalogCategories = (items) => {
+    const createCatalogCategories = (categories) => {
         return (
             <div className={styles.catalogCategoriesWrapper}>
-                {items.map((item) => (
-                    <div className={styles.catalogCategory} key={item.id}>
-                        <img src={item.img} alt="" />
+                {categories.map((category) => (
+                    <div className={styles.catalogCategory} key={category.id}>
+                        <img src={category.img} alt="" />
                         <div className={styles.catalogCategoryTitle}>
-                            <p>{item.title}</p>
+                            <p>{category.title}</p>
                         </div>
                     </div>
                 ))}

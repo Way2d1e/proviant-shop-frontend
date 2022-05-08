@@ -1,6 +1,7 @@
 .catalogPage {
     width: 79.86%;
     margin: 0 auto;
+    font-family: "Open Sans", sans-serif;
 }
 
 .titlePage {
@@ -37,16 +38,15 @@
     text-align: center;
     width: 100%;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.7);
     border-radius: 0 0 10px 10px;
+    background: rgba(255, 255, 255, 0.7);
     transition: .5s;
 }
 
 .catalogCategory:hover .catalogCategoryTitle {
-    background: rgba(137,137,137,0.4);
     color: #fff;
-    text-shadow: 1px 0 1px #000;
     font-weight: bold;
+    background: rgba(137,137,137,0.4);
     transition: .5s;
 }
 
