@@ -4,7 +4,6 @@ import Logo from '../../assets/Images/Logo.svg'
 import Cart from '../../assets/Images/shopCart.svg'
 import Search from '../../assets/Images/search.svg'
 import {Link} from "react-router-dom";
-import Catalog from "../../pages/Catalog/Catalog";
 
 export const Header = () => {
     return (
@@ -16,7 +15,6 @@ export const Header = () => {
                         <input
                             className={styles.InputSearch}
                             type="search"
-                            placeholder="Поиск..."
                         />
                         <button className={styles.BtnSearch}>
                             <img src={Search} alt="" />
