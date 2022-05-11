@@ -1,10 +1,11 @@
 .container {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.container p {
-    display: flex;
-    justify-content: center;
+.logo{
+    margin: 30px 0;
 }
 
 .NavBar {
@@ -67,26 +68,43 @@
 .NavRef {
     display: flex;
     gap: 15px;
+    /*    color: black;*/
     font-family: "MontserratRegular";
     font-size: 24px;
     font-weight: 400;
     line-height: 29px;
+
 }
 
-.NavRef a {
-    color: black;
+/*.NavRef a {*/
+/*    color: black;*/
+/*    text-decoration: none;*/
+/*}*/
+
+
+.navLink {
+    color: #000;
     text-decoration: none;
 }
 
-.NavRef a:hover {
+.navLink svg {
+    fill: #000;
+}
+
+.navLink svg:hover {
+    fill: #46B14B;
+}
+
+.navLink:hover {
     color: #46B14B;
     cursor: pointer;
 }
 
-.NavRef a:focus {
+.navLinkActive {
     color: #46B14B;
     text-decoration: underline;
 }
 
-.BtnCart {
+.navLinkActive svg {
+    fill: #46B14B;
 }
