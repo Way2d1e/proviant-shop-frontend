@@ -1,17 +1,15 @@
 import React from 'react'
-import styles from './Header.module.css'
 import Logo from '../../assets/Images/Logo.svg'
 import { ReactComponent as Cart } from '../../assets/Images/shopCart.svg'
 import Search from '../../assets/Images/search.svg'
 import { NavLink } from 'react-router-dom'
-import Catalog from '../../pages/Catalog/Catalog'
+
+import styles from './Header.module.css'
 
 export const Header = () => {
     return (
         <div className={styles.container}>
-            <p>
-                <img src={Logo} />
-            </p>
+            <img className={styles.logo} src={Logo} />
             <div className={styles.NavBar}>
                 <div className={styles.NavBarContent}>
                     <div className={styles.SearchContainer}>
@@ -27,28 +25,36 @@ export const Header = () => {
                     <div className={styles.NavRef}>
                         <NavLink
                             to="/"
-                            className={({ isActive }) =>  (isActive ? styles.navLinkActive : styles.navLink)}
+                            className={({ isActive }) =>
+                                isActive ? styles.navLinkActive : styles.navLink
+                            }
                         >
                             Главная
                         </NavLink>
                         <NavLink
                             to="/catalog"
-                            className={({ isActive }) =>  (isActive ? styles.navLinkActive : styles.navLink)}
+                            className={({ isActive }) =>
+                                isActive ? styles.navLinkActive : styles.navLink
+                            }
                         >
                             Каталог
                         </NavLink>
                         <NavLink
                             to="/contacts"
-                            className={({ isActive }) =>  (isActive ? styles.navLinkActive : styles.navLink)}
+                            className={({ isActive }) =>
+                                isActive ? styles.navLinkActive : styles.navLink
+                            }
                         >
                             Контакты
                         </NavLink>
                     </div>
                     <NavLink
                         to="/cart"
-                        className={({ isActive }) =>  (isActive ? styles.navLinkActive : styles.navLink)}
+                        className={({ isActive }) =>
+                            isActive ? styles.navLinkActive : styles.navLink
+                        }
                     >
-                        <Cart className={styles.BtnCart} />
+                        <Cart />
                     </NavLink>
                 </div>
             </div>

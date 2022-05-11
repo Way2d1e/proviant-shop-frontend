@@ -7,24 +7,33 @@ import ProductCart from '../../assets/Images/cart.svg?component'
 const Cart = () => {
     return (
         <div className={styles.container}>
-            <div className={styles.ContainerBasket}>
-                <div className={styles.BacketItems}>
-                    <div className={styles.BasketItem}>
-                        <div className={styles.imgExample}></div>
-                        <div className={styles.BasketDescription}>
-                            <p className={styles.ProductName}>Миндаль</p>
-                            <p className={styles.ProductCategory}>Орехи</p>
-                            <p className={styles.ProductPrice}>350.70 ₽ / кг</p>
+            <p className={styles.title}>Корзина</p>
+            <div className={styles.ContainerCart}>
+                <div className={styles.CartItems}>
+                    <div className={styles.CartItem}>
+                        <div className={styles.productInfo}>
+                            <div className={styles.imgExample}></div>
+                            <div className={styles.CartDescription}>
+                                <p className={styles.ProductName}>Миндаль</p>
+                                <p className={styles.ProductCategory}>Орехи</p>
+                                <p className={styles.ProductPrice}>
+                                    350.70 ₽ / кг
+                                </p>
+                            </div>
                         </div>
                         <div className={styles.InfoPrice}>
                             <div className={styles.AboutWeight}>
-                                <button><img src={Minus} alt=""/></button>
-                                <input type="text" />
-                                <button><img src={Plus} alt=""/></button>
+                                <button>
+                                    <img src={Minus} alt="" />
+                                </button>
+                                <input className={styles.productWeight} type="number" />
+                                <button>
+                                    <img src={Plus} alt="" />
+                                </button>
                             </div>
                             <div className={styles.AboutPrice}>
                                 <p>79.8₽</p>
-                                <img src={ProductCart} alt=""/>
+                                <img src={ProductCart} alt="" />
                             </div>
                         </div>
                     </div>
@@ -33,8 +42,8 @@ const Cart = () => {
                     <p className={styles.promocode}>ЕСТЬ ПРОМОКОД?</p>
                     <input
                         className={styles.PromocodeInput}
-                        placeholder="Введите промокод"
                         type="text"
+                        placeholder="Введите промокод"
                     />
                     <div className={styles.ContainerSumm}>
                         <p className={styles.intermediate}>Сумма заказа:</p>
