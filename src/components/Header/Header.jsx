@@ -1,37 +1,61 @@
 import React from 'react'
-import styles from './Header.module.css'
 import Logo from '../../assets/Images/Logo.svg'
-import Cart from '../../assets/Images/shopCart.svg'
+import { ReactComponent as Cart } from '../../assets/Images/shopCart.svg'
 import Search from '../../assets/Images/search.svg'
-import {Link} from "react-router-dom";
+import { NavLink } from 'react-router-dom'
+
+import styles from './Header.module.css'
 
 export const Header = () => {
     return (
         <div className={styles.container}>
-            <p><img src={Logo}  alt="logo"/></p>
+            <img className={styles.logo} src={Logo} />
             <div className={styles.NavBar}>
                 <div className={styles.NavBarContent}>
                     <div className={styles.SearchContainer}>
                         <input
                             className={styles.InputSearch}
                             type="search"
+                            placeholder="Поиск..."
                         />
                         <button className={styles.BtnSearch}>
                             <img src={Search} alt="" />
                         </button>
                     </div>
                     <div className={styles.NavRef}>
-                        <Link to='/'>
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) =>
+                                isActive ? styles.navLinkActive : styles.navLink
+                            }
+                        >
                             Главная
-                        </Link>
-                        <Link to='/catalog'>
+                        </NavLink>
+                        <NavLink
+                            to="/catalog"
+                            className={({ isActive }) =>
+                                isActive ? styles.navLinkActive : styles.navLink
+                            }
+                        >
                             Каталог
-                        </Link>
-                        <Link to='/contacts'>
+                        </NavLink>
+                        <NavLink
+                            to="/contacts"
+                            className={({ isActive }) =>
+                                isActive ? styles.navLinkActive : styles.navLink
+                            }
+                        >
                             Контакты
-                        </Link>
+                        </NavLink>
                     </div>
-                    <img className={styles.BtnCart} src={Cart} alt="" />
+                    <NavLink
+                        to="/cart"
+                        className={({ isActive }) =>
+                            isActive ? styles.navLinkActive : styles.navLink
+                        }
+                    >
+                        <Cart />
+                    </NavLink>
                 </div>
             </div>
         </div>
