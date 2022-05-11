@@ -1,0 +1,192 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.ContainerBasket {
+    display: flex;
+    justify-content: space-between;
+    width: 79.86%;
+}
+
+.BacketItems {
+    display: flex;
+    flex-direction: column;
+    width: 60.87%;
+}
+
+.BasketItem {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    width: 100%;
+    height: 175px;
+    background: #D3EAC3;
+    border-radius: 10px;
+}
+
+.imgExample {
+    width: 150px;
+    height: 125px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.BasketDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ProductName {
+    font-family: "Open Sans", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: 0em;
+}
+
+.ProductCategory {
+    color: #898989;
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33px;
+    letter-spacing: 0em;
+}
+
+.ProductPrice {
+    color: #898989;
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 33px;
+    letter-spacing: 0em;
+}
+
+.InfoPrice {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.AboutWeight{
+    display: flex;
+    gap: 5px;
+    height: 40px;
+}
+
+.AboutWeight button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.AboutWeight input{
+    background: #FFFFFF;
+    border: 1px solid #46B14B;
+    border-radius: 10px;
+}
+
+.AboutPrice{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0 0 0 ;
+}
+
+.AboutPrice p{
+    font-family: "Open Sans", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: 0em;
+}
+
+.FinalCheck {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+    width: 34.78%;
+    background: #D3EAC3;
+    border-radius: 10px;
+}
+
+p {
+    margin: 0px;
+}
+
+.promocode {
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 33px;
+    letter-spacing: 0em;
+}
+
+.PromocodeInput {
+    box-sizing: border-box;
+    width: 300px;
+    height: 40px;
+    padding-left: 15px;
+    margin-top: 10px;
+    background: transparent;
+    border: 1px solid #46B14B;
+    border-radius: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.ContainerSumm {
+    display: flex;
+    justify-content: space-between;
+}
+
+.intermediate {
+    margin-top: 5px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+}
+
+.total {
+    margin-top: 5px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 0em;
+}
+
+.ContainerButton {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.ContainerButton button {
+    width: 300px;
+    height: 50px;
+    background: #46B14B;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em;
+}
