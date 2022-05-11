@@ -1,0 +1,56 @@
+.catalogPage {
+    width: 79.86%;
+    margin: 0 auto;
+    font-family: "Open Sans", sans-serif;
+}
+
+.titlePage {
+    padding: 30px 0;
+    font-size: 36px;
+}
+
+.catalogCategoriesWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-bottom: 90px;
+}
+
+.catalogCategory {
+    position: relative;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+    transition: .5s;
+}
+
+.catalogCategory:hover {
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+.catalogCategory img {
+    border-radius: 10px;
+}
+
+.catalogCategoryTitle {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    border-radius: 0 0 10px 10px;
+    background: rgba(255, 255, 255, 0.7);
+    transition: .5s;
+}
+
+.catalogCategory:hover .catalogCategoryTitle {
+    color: #fff;
+    font-weight: bold;
+    background: rgba(137,137,137,0.4);
+    transition: .5s;
+}
+
+.catalogCategoryTitle p {
+    margin: 53px 0;
+    font-size: 25px;
+}
