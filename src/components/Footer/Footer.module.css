@@ -1,6 +1,7 @@
 .footerWrap {
     width: 100%;
     font-family: 'MontserratRegular', sans-serif;
+    cursor: default;
 }
 
 .feedback {
@@ -8,16 +9,17 @@
     justify-content: center;
     align-items: center;
     height: 85px;
-    background: #D3EAC3;
-}
-
-.feedback p {
     font-size: 20px;
+    background: #D3EAC3;
 }
 
 .feedback a {
     color: #558203;
     text-decoration: none;
+}
+
+.feedback a:hover {
+    text-decoration: underline;
 }
 
 .footerInfo {
@@ -31,6 +33,11 @@
 
 .footerInfo a {
     text-decoration: none;
+    color: #898989;
+}
+
+.footerInfo a:hover {
+    color: #558203;
 }
 
 .footerInfo p {

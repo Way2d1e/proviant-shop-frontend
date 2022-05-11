@@ -18,7 +18,9 @@ export const Footer = () => {
                 </p>
                 <p>Ул.Центральная, 41</p>
                 <p>ИП “Провиант”</p>
-                <a href="mailto:shop@proviant.ru"><p>shop@proviant.ru</p></a>
+                <a href="mailto:shop@proviant.ru">
+                    <span>shop@proviant.ru</span>
+                </a>
                 <a href="https://wa.me/74956409640?text=Здравствуйте%2C+у+меня+есть+вопрос"><img src={WhatsApp} alt="" /></a>
             </div>
         </div>
