@@ -2,27 +2,27 @@ import React from 'react'
 import styles from './Cart.module.css'
 import Minus from '../../assets/Images/minus.svg'
 import Plus from '../../assets/Images/plus.svg'
-import ProductCart from '../../assets/Images/cart.svg?component'
+import productCart from '../../assets/Images/cart.svg?component'
 
-const Cart = () => {
+export const Cart = () => {
     return (
         <div className={styles.container}>
-            <p className={styles.title}>Корзина</p>
-            <div className={styles.ContainerCart}>
-                <div className={styles.CartItems}>
-                    <div className={styles.CartItem}>
+            <div className={styles.title}>Корзина</div>
+            <div className={styles.containerCart}>
+                <div className={styles.cartItems}>
+                    <div className={styles.cartItem}>
                         <div className={styles.productInfo}>
                             <div className={styles.imgExample}></div>
-                            <div className={styles.CartDescription}>
-                                <p className={styles.ProductName}>Миндаль</p>
-                                <p className={styles.ProductCategory}>Орехи</p>
-                                <p className={styles.ProductPrice}>
+                            <div className={styles.cartDescription}>
+                                <div className={styles.productName}>Миндаль</div>
+                                <div className={styles.productCategory}>Орехи</div>
+                                <div className={styles.productPrice}>
                                     350.70 ₽ / кг
-                                </p>
+                                </div>
                             </div>
                         </div>
-                        <div className={styles.InfoPrice}>
-                            <div className={styles.AboutWeight}>
+                        <div className={styles.infoPrice}>
+                            <div className={styles.aboutWeight}>
                                 <button>
                                     <img src={Minus} alt="" />
                                 </button>
@@ -31,33 +31,33 @@ const Cart = () => {
                                     <img src={Plus} alt="" />
                                 </button>
                             </div>
-                            <div className={styles.AboutPrice}>
-                                <p>79.8₽</p>
-                                <img src={ProductCart} alt="" />
+                            <div className={styles.aboutPrice}>
+                                <div>79.8₽</div>
+                                <img src={productCart} alt="" />
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className={styles.FinalCheck}>
+                <div className={styles.finalCheck}>
                     <p className={styles.promocode}>ЕСТЬ ПРОМОКОД?</p>
                     <input
-                        className={styles.PromocodeInput}
+                        className={styles.promocodeInput}
                         type="text"
                         placeholder="Введите промокод"
                     />
-                    <div className={styles.ContainerSumm}>
+                    <div className={styles.containerSumm}>
                         <p className={styles.intermediate}>Сумма заказа:</p>
                         <p className={styles.intermediate}>123р</p>
                     </div>
-                    <div className={styles.ContainerSumm}>
+                    <div className={styles.containerSumm}>
                         <p className={styles.intermediate}>Вес заказа:</p>
                         <p className={styles.intermediate}>0.3кг</p>
                     </div>
-                    <div className={styles.ContainerSumm}>
+                    <div className={styles.containerSumm}>
                         <p className={styles.total}>Итого к оплате</p>
                         <p className={styles.total}>123р</p>
                     </div>
-                    <div className={styles.ContainerButton}>
+                    <div className={styles.containerButton}>
                         <button>Оформление заказа</button>
                     </div>
                 </div>
@@ -65,5 +65,3 @@ const Cart = () => {
         </div>
     )
 }
-
-export default Cart

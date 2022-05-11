@@ -34,7 +34,7 @@ export const CatalogPage = () => {
 
     return (
         <div className={styles.catalogPage}>
-            <div className={styles.titlePage}><a href="#">Каталог</a></div>
+            <div className={styles.titlePage}><p>Каталог</p></div>
             {createCatalogCategories(catalogCategories)}
         </div>
     )

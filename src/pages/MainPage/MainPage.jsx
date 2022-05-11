@@ -5,7 +5,7 @@ import Pshenichka from '../../assets/Images/pshenichka.svg'
 import Service from '../../assets/Images/service.svg'
 import Expirience from '../../assets/Images/expirience.svg'
 
-const MainPage = () => {
+export const MainPage = () => {
     const advanteges = [
         {
             id: 0,
@@ -35,12 +35,12 @@ const MainPage = () => {
 
     const createAdvantages = (advantages) => {
         return (
-            <div className={styles.AdvantageContainer}>
+            <div className={styles.advantageContainer}>
                 {advantages.map((item) => (
-                    <div key={item.id} className={styles.ItemAdvantege}>
-                        <img className={styles.ItemImg} src={item.img} alt=""/>
-                        <p className={styles.ItemTitle}>{item.title}</p>
-                        <p className={styles.ItemBody}>{item.body}</p>
+                    <div key={item.id} className={styles.itemAdvantege}>
+                        <img className={styles.itemImg} src={item.img} alt=""/>
+                        <p className={styles.itemTitle}>{item.title}</p>
+                        <p className={styles.itemBody}>{item.body}</p>
                     </div>
 
                 ))}
@@ -51,7 +51,7 @@ const MainPage = () => {
     return (
         <div className={styles.container}>
             <div className={styles.advantages}>
-                <p className={styles.AdvantagesTitle}>
+                <p className={styles.advantagesTitle}>
                     Магазин вкусных продуктов
                 </p>
                 {createAdvantages(advanteges)}
@@ -59,5 +59,3 @@ const MainPage = () => {
         </div>
     )
 }
-
-export default MainPage;

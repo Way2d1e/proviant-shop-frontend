@@ -1,3 +1,7 @@
+div{
+    cursor: default;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -11,14 +15,14 @@
     font: 400 36px/49px "Open Sans", sans-serif;
 }
 
-.ContainerCart {
+.containerCart {
     display: flex;
     justify-content: space-between;
     width: 79.86%;
     margin: 30px 0;
 }
 
-.CartItems {
+.cartItems {
     display: flex;
     flex-direction: column;
     width: 60.87%;
@@ -29,7 +33,7 @@
     gap: 25px;
 }
 
-.CartItem {
+.cartItem {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -47,39 +51,40 @@
     border-radius: 10px;
 }
 
-.CartDescription {
+.cartDescription {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.ProductName {
+.productName {
     font: 400 32px/44px "Open Sans", sans-serif;
+    cursor: default;
 }
 
-.ProductCategory {
+.productCategory {
     color: #558203;
     font: 400 24px/33px "Open Sans", sans-serif;
 }
 
-.ProductPrice {
+.productPrice {
     color: #898989;
     font: 700 24px/33px "Open Sans", sans-serif;
 }
 
-.InfoPrice {
+.infoPrice {
     display: flex;
     flex-direction: column;
     align-items: end;
 }
 
-.AboutWeight {
+.aboutWeight {
     display: flex;
     gap: 5px;
     height: 40px;
 }
 
-.AboutWeight button {
+.aboutWeight button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,7 +101,7 @@
     font: 400 16px/22px "Open Sans", sans-serif;
 }
 
-.AboutPrice {
+.aboutPrice {
     display: flex;
     gap: 50px;
     align-items: center;
@@ -104,11 +109,11 @@
     margin: auto 0 0 0;
 }
 
-.AboutPrice p {
+.aboutPrice div {
     font: 400 40px/54px "Open Sans", sans-serif;
 }
 
-.FinalCheck {
+.finalCheck {
     display: flex;
     flex-direction: column;
     padding: 15px;
@@ -126,7 +131,7 @@ p {
     font: 600 24px/33px "Open Sans", sans-serif;
 }
 
-.PromocodeInput {
+.promocodeInput {
     box-sizing: border-box;
     width: 300px;
     height: 40px;
@@ -152,7 +157,7 @@ input::placeholder {
     align-items: center;
 }
 
-.ContainerSumm {
+.containerSumm {
     display: flex;
     justify-content: space-between;
 }
@@ -167,13 +172,13 @@ input::placeholder {
     font: 700 20px/27px "Open Sans", sans-serif;
 }
 
-.ContainerButton {
+.containerButton {
     margin-top: 5px;
     display: flex;
     justify-content: center;
 }
 
-.ContainerButton button {
+.containerButton button {
     width: 300px;
     height: 50px;
     background: #46B14B;
@@ -181,4 +186,5 @@ input::placeholder {
     border: none;
     border-radius: 50px;
     font: 700 16px/22px "Open Sans", sans-serif;
+    cursor: pointer;
 }
