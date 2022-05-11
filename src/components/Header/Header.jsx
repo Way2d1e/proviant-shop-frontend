@@ -9,7 +9,7 @@ import styles from './Header.module.css'
 export const Header = () => {
     return (
         <div className={styles.container}>
-            <img className={styles.logo} src={Logo} />
+            <img className={styles.logo} src={Logo} draggable={false}/>
             <div className={styles.NavBar}>
                 <div className={styles.NavBarContent}>
                     <div className={styles.SearchContainer}>

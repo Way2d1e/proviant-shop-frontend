@@ -22,7 +22,7 @@ export const CatalogPage = () => {
             <div className={styles.catalogCategoriesWrapper}>
                 {categories.map((category) => (
                     <div className={styles.catalogCategory} key={category.id}>
-                        <img src={category.img} alt="" />
+                        <img src={category.img} alt=""  draggable={false}/>
                         <div className={styles.catalogCategoryTitle}>
                             <p>{category.title}</p>
                         </div>
