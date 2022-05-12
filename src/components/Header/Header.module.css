@@ -34,7 +34,7 @@
     height: 41px;
     width: 91.43%;
     padding-left: 30px;
-    font-family: "MontserratRegular";
+    font-family: "MontserratRegular", sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
@@ -67,20 +67,14 @@
 
 .NavRef {
     display: flex;
+    align-items: center;
     gap: 15px;
-    /*    color: black;*/
-    font-family: "MontserratRegular";
+    font-family: "MontserratRegular", sans-serif;
     font-size: 24px;
     font-weight: 400;
     line-height: 29px;
 
 }
-
-/*.NavRef a {*/
-/*    color: black;*/
-/*    text-decoration: none;*/
-/*}*/
-
 
 .navLink {
     color: #000;

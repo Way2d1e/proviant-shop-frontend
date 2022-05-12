@@ -1,10 +1,10 @@
 import React from 'react'
-import styles from './Cart.module.css'
-import Minus from '../../assets/Images/minus.svg'
-import Plus from '../../assets/Images/plus.svg'
-import productCart from '../../assets/Images/cart.svg?component'
+import styles from './CartPage.module.css'
+import Minus from '../../assets/images/minus.svg'
+import Plus from '../../assets/images/plus.svg'
+import productCart from '../../assets/images/cart.svg?component'
 
-export const Cart = () => {
+export const CartPage = () => {
     return (
         <div className={styles.container}>
             <div className={styles.title}>Корзина</div>

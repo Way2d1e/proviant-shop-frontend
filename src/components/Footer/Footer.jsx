@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Footer.module.css'
-import WhatsApp from '../../assets/Images/whatsApp.svg'
+import WhatsApp from '../../assets/images/whatsApp.svg'
 
 export const Footer = () => {
     return (

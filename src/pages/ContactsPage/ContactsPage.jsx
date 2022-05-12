@@ -1,12 +1,12 @@
 import React from 'react'
-import styles from './Contacts.module.css'
-import Support from '../../assets/Images/contacts_header.png'
-import Call from '../../assets/Images/Call.svg'
-import Mail from '../../assets/Images/mail.svg'
-import Location from '../../assets/Images/location.svg'
+import styles from './ContactsPage.module.css'
+import Support from '../../assets/images/contacts_header.png'
+import Call from '../../assets/images/Call.svg'
+import Mail from '../../assets/images/mail.svg'
+import Location from '../../assets/images/location.svg'
 import { YMaps, Map, Placemark } from 'react-yandex-maps'
 
-export const Contacts = () => {
+export const ContactsPage = () => {
     return (
         <div className={styles.container}>
             <div className={styles.containerContacts}>
