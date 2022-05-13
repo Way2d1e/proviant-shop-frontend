@@ -1,8 +1,6 @@
 import React from 'react'
 import styles from './CartPage.module.css'
-import Minus from '../../assets/images/minus.svg'
-import Plus from '../../assets/images/plus.svg'
-import productCart from '../../assets/images/cart.svg?component'
+import { CartItem } from '../../components/CartItem'
 
 export const CartPage = () => {
     return (
@@ -10,43 +8,10 @@ export const CartPage = () => {
             <div className={styles.title}>Корзина</div>
             <div className={styles.containerCart}>
                 <div className={styles.cartItems}>
-                    <div className={styles.cartItem}>
-                        <div className={styles.productInfo}>
-                            <div className={styles.imgExample}></div>
-                            <div className={styles.cartDescription}>
-                                <div className={styles.productName}>
-                                    Миндаль
-                                </div>
-                                <div className={styles.productCategory}>
-                                    Орехи
-                                </div>
-                                <div className={styles.productPrice}>
-                                    350.70 ₽ / кг
-                                </div>
-                            </div>
-                        </div>
-                        <div className={styles.infoPrice}>
-                            <div className={styles.aboutWeight}>
-                                <button>
-                                    <img src={Minus} alt="" />
-                                </button>
-                                <input
-                                    className={styles.productWeight}
-                                    type="number"
-                                />
-                                <button>
-                                    <img src={Plus} alt="" />
-                                </button>
-                            </div>
-                            <div className={styles.aboutPrice}>
-                                <div>79.8₽</div>
-                                <img src={productCart} alt="" />
-                            </div>
-                        </div>
-                    </div>
+                    <CartItem/>
                 </div>
                 <div className={styles.finalCheck}>
-                    <p className={styles.promocode}>ЕСТЬ ПРОМОКОД?</p>
+                    <div className={styles.promocode}>ЕСТЬ ПРОМОКОД?</div>
                     <input
                         className={styles.promocodeInput}
                         type="text"
@@ -54,17 +19,17 @@ export const CartPage = () => {
                     />
                     <hr className={styles.line}/>
                     <div className={styles.containerSumm}>
-                        <p className={styles.intermediate}>Сумма заказа:</p>
-                        <p className={styles.intermediate}>123р</p>
+                        <div className={styles.intermediate}>Сумма заказа:</div>
+                        <div className={styles.intermediate}>123р</div>
                     </div>
                     <div className={styles.containerSumm}>
-                        <p className={styles.intermediate}>Вес заказа:</p>
-                        <p className={styles.intermediate}>0.3кг</p>
+                        <div className={styles.intermediate}>Вес заказа:</div>
+                        <div className={styles.intermediate}>0.3кг</div>
                     </div>
                     <hr className={styles.line}/>
                     <div className={styles.containerSumm}>
-                        <p className={styles.total}>Итого к оплате</p>
-                        <p className={styles.total}>123р</p>
+                        <div className={styles.total}>Итого к оплате</div>
+                        <div className={styles.total}>123р</div>
                     </div>
                     <div className={styles.containerButton}>
                         <button>Оформление заказа</button>

@@ -11,7 +11,13 @@ export const App = () => {
             <Header />
             <Routes>
                 {routes.map((route) => {
-                    return <Route path={route.path} element={route.element} key={route.path} />
+                    return (
+                        <Route
+                            path={route.path}
+                            element={route.element}
+                            key={route.path}
+                        />
+                    )
                 })}
             </Routes>
             <Footer />

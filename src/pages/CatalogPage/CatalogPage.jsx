@@ -13,12 +13,12 @@ export const CatalogPage = () => {
             .getCategories()
             .then((data) => setCatalogCategories(data))
     }, [])
-
+    //TODO выпить пиво
     const createCatalogCategories = () => {
         return (
             <div className={styles.catalogCategoriesWrapper}>
                 {catalogCategories.map(
-                    ({ id, image_category: img, name_category: title }) => (
+                    ({ id, image: img, name: title }) => (
                         <div className={styles.catalogCategory} key={id}>
                             <img src={img} alt="" draggable={false} />
                             <div className={styles.catalogCategoryTitle}>

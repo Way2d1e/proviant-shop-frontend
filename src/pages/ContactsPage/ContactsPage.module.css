@@ -26,11 +26,8 @@ a{
 
 .title {
     align-self: start;
-    margin: 25px 0;
-    font-family: "Open Sans", sans-serif;
-    font-size: 40px;
-    font-weight: 400;
-    line-height: 54px;
+    padding: 30px 0;
+    font: 400 36px/54px "Open Sans", sans-serif;
 }
 
 .imgContacts {

@@ -1,0 +1,86 @@
+.productInfo {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.cartItem {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 25px;
+    width: 100%;
+    background: #D3EAC3;
+    border-radius: 10px;
+}
+
+.imgExample {
+    width: 150px;
+    height: 100%;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.cartDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.productName {
+    font: 400 32px/44px "Open Sans", sans-serif;
+    cursor: default;
+}
+
+.productCategory {
+    color: #558203;
+    font: 400 24px/33px "Open Sans", sans-serif;
+}
+
+.productPrice {
+    color: #898989;
+    font: 700 24px/33px "Open Sans", sans-serif;
+}
+
+.infoPrice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.aboutWeight {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    height: 40px;
+}
+
+.aboutWeight button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.productWeight {
+    background: #FFFFFF;
+    border: 1px solid #46B14B;
+    border-radius: 10px;
+    font: 400 16px/22px "Open Sans", sans-serif;
+}
+
+.aboutPrice {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0 0 0;
+}
+
+.aboutPrice div {
+    font: 400 40px/54px "Open Sans", sans-serif;
+}
