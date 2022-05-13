@@ -110,7 +110,7 @@ a{
 }
 
 .mapSize{
-    /*overflow: hidden;*/
     width: 700px;
     height: 400px;
+    border: 1px solid #558203;
 }

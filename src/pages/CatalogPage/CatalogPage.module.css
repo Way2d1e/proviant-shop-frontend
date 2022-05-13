@@ -22,9 +22,8 @@
 }
 
 .catalogCategoriesWrapper {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     padding-bottom: 90px;
 }

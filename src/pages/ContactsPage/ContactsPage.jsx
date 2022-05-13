@@ -32,7 +32,7 @@ export const ContactsPage = () => {
                         <p className={styles.mapTitle}>Мы находимся здесь</p>
                         <div className={styles.mapBody}>
                             <img src={Location} alt="" />
-                            <p>пгт.Красная Яруга, ул. Центральная, д.41</p>
+                            <p>пгт. Красная Яруга, ул. Центральная, д.41</p>
                         </div>
                         <YMaps>
                             <Map

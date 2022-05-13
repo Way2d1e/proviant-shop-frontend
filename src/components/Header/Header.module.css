@@ -5,7 +5,7 @@
 }
 
 .logo{
-    margin: 30px 0;
+    margin-bottom: 30px;
 }
 
 .NavBar {
@@ -27,11 +27,12 @@
 .SearchContainer {
     display: flex;
     align-items: center;
-    width: 700px;
+    width: 60%;
+    margin-right: 15px;
 }
 
 .InputSearch {
-    height: 41px;
+    height: 40px;
     width: 91.43%;
     padding-left: 30px;
     font-family: "MontserratRegular", sans-serif;
@@ -48,8 +49,12 @@
     display: none;
 }
 
+.InputSearch input:hover::-webkit-search-cancel-button {
+    display: none;
+}
+
 .InputSearch:focus {
-    outline: 1px solid #46B14B;
+    border: 1px solid #46B14B;
 }
 
 .InputSearch input::placeholder {

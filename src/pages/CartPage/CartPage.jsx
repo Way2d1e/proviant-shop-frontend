@@ -14,8 +14,12 @@ export const CartPage = () => {
                         <div className={styles.productInfo}>
                             <div className={styles.imgExample}></div>
                             <div className={styles.cartDescription}>
-                                <div className={styles.productName}>Миндаль</div>
-                                <div className={styles.productCategory}>Орехи</div>
+                                <div className={styles.productName}>
+                                    Миндаль
+                                </div>
+                                <div className={styles.productCategory}>
+                                    Орехи
+                                </div>
                                 <div className={styles.productPrice}>
                                     350.70 ₽ / кг
                                 </div>
@@ -26,7 +30,10 @@ export const CartPage = () => {
                                 <button>
                                     <img src={Minus} alt="" />
                                 </button>
-                                <input className={styles.productWeight} type="number" />
+                                <input
+                                    className={styles.productWeight}
+                                    type="number"
+                                />
                                 <button>
                                     <img src={Plus} alt="" />
                                 </button>
@@ -45,6 +52,7 @@ export const CartPage = () => {
                         type="text"
                         placeholder="Введите промокод"
                     />
+                    <hr className={styles.line}/>
                     <div className={styles.containerSumm}>
                         <p className={styles.intermediate}>Сумма заказа:</p>
                         <p className={styles.intermediate}>123р</p>
@@ -53,6 +61,7 @@ export const CartPage = () => {
                         <p className={styles.intermediate}>Вес заказа:</p>
                         <p className={styles.intermediate}>0.3кг</p>
                     </div>
+                    <hr className={styles.line}/>
                     <div className={styles.containerSumm}>
                         <p className={styles.total}>Итого к оплате</p>
                         <p className={styles.total}>123р</p>
