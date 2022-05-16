@@ -1,8 +1,7 @@
-export default class ProductService {
+export default class {
+    static _API = 'http://26.85.60.200:8080/'
 
-    _API = 'http://26.85.60.200:8080/'
-
-    getResource = async (url, options) => {
+    static getResource = async (url, options) => {
         const res = await fetch(`${this._API}${url}`, options)
         if (!res.ok) {
             throw new Error(`Could not fetch ${url}, received ${res.status}`)
@@ -10,11 +9,21 @@ export default class ProductService {
         return res.json()
     }
 
-    getCategories = async () => {
-        return await this.getResource(`category`)
+    static getCategories = async () => {
+        return await this.getResource('category')
     }
 
-    createOrder = async (order) => {
+    static setCartProduct = async () => {
+        const products = await fetch('http://localhost:3001/products').then((res) => res.json())
+        // console.log(products)
+        await window.localStorage.setItem('products', JSON.stringify(products))
+    }
+
+    static getCartProducts = async () => {
+        return JSON.parse(window.localStorage.getItem('products'))
+    }
+
+    static createOrder = async (order) => {
         return await this.getResource('order', {
             method: 'POST',
             headers: {

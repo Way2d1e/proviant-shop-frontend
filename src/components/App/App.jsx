@@ -10,15 +10,13 @@ export const App = () => {
         <Router>
             <Header />
             <Routes>
-                {routes.map((route) => {
-                    return (
-                        <Route
-                            path={route.path}
-                            element={route.element}
-                            key={route.path}
-                        />
-                    )
-                })}
+                {routes.map((route) => (
+                    <Route
+                        path={route.path}
+                        element={route.element}
+                        key={route.path}
+                    />
+                ))}
             </Routes>
             <Footer />
         </Router>

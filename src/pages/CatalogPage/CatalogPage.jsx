@@ -6,27 +6,23 @@ import ProductService from '../../services/productsService'
 export const CatalogPage = () => {
     const [catalogCategories, setCatalogCategories] = useState(null)
 
-    const productService = new ProductService()
-
     useEffect(() => {
-        productService
-            .getCategories()
-            .then((data) => setCatalogCategories(data))
+        ProductService.getCategories().then((data) =>
+            setCatalogCategories(data)
+        )
     }, [])
     //TODO выпить пиво
     const createCatalogCategories = () => {
         return (
             <div className={styles.catalogCategoriesWrapper}>
-                {catalogCategories.map(
-                    ({ id, image: img, name: title }) => (
-                        <div className={styles.catalogCategory} key={id}>
-                            <img src={img} alt="" draggable={false} />
-                            <div className={styles.catalogCategoryTitle}>
-                                <p>{title}</p>
-                            </div>
+                {catalogCategories.map(({ id, image: img, name: title }) => (
+                    <div className={styles.catalogCategory} key={id}>
+                        <img src={img} alt="" draggable={false} />
+                        <div className={styles.catalogCategoryTitle}>
+                            <p>{title}</p>
                         </div>
-                    )
-                )}
+                    </div>
+                ))}
             </div>
         )
     }

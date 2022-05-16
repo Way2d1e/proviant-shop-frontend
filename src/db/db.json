@@ -60,5 +60,17 @@
       "img": "src/assets/images/other.png",
       "title": "Прочее"
     }
+  ],
+  "products": [
+    {
+      "id": 0,
+      "name": "Огурцы",
+      "price": 135
+    },
+    {
+      "id": 1,
+      "name": "Огурцы",
+      "price": 135
+    }
   ]
 }

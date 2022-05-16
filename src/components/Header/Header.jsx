@@ -11,19 +11,19 @@ export const Header = () => {
             <Link to="/">
                 <img className={styles.logo} src={Logo} draggable={false} />
             </Link>
-            <div className={styles.NavBar}>
-                <div className={styles.NavBarContent}>
-                    <div className={styles.SearchContainer}>
+            <div className={styles.navBar}>
+                <div className={styles.navBarContent}>
+                    <div className={styles.searchContainer}>
                         <input
-                            className={styles.InputSearch}
+                            className={styles.inputSearch}
                             type="search"
                             placeholder="Поиск..."
                         />
-                        <button className={styles.BtnSearch}>
+                        <button className={styles.btnSearch}>
                             <img src={Search} alt="" />
                         </button>
                     </div>
-                    <div className={styles.NavRef}>
+                    <div className={styles.navRef}>
                         {routes.map((route) => (
                             <NavLink
                                 to={route.path}
