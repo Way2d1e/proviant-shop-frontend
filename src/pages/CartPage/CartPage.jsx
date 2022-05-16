@@ -4,15 +4,23 @@ import { CartItem } from '../../components/CartItem'
 import productsService from '../../services/productsService'
 import { Loader } from '../../components/UI/Loader'
 
-export const CartPage = () => {
-    const [cartProducts, setCartProducts ]  = useState(null)
+export const CartPage = (props) => {
+    const [cartProducts, setCartProducts] = useState(null)
+    // const [deleteCartItem, setDeleteCartItem ]  = useState(null)
 
     useEffect(() => {
-        // productsService.setCartProduct()
+        productsService.setCartProduct()
         productsService.getCartProducts().then((products) => {
             setCartProducts(products)
         })
     })
+
+    const deleteItem = (e, id) => {
+        const products = cartProducts.filter((item, index) => {
+            return item.id !== id
+        })
+        window.localStorage.setItem('products', JSON.stringify(products))
+    }
 
     return (
         <div className={styles.container}>
@@ -22,9 +30,11 @@ export const CartPage = () => {
                     {cartProducts ? (
                         cartProducts.map((product) => (
                             <CartItem
+                                id={product.id}
                                 name={product.name}
                                 price={product.price}
                                 key={product.id}
+                                deleteItem={deleteItem}
                             />
                         ))
                     ) : (

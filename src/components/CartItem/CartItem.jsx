@@ -1,15 +1,15 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import styles from './CartItem.module.css'
 import Minus from '../../assets/images/minus.svg'
 import Plus from '../../assets/images/plus.svg'
 import productCart from '../../assets/images/cart.svg'
 
 export const CartItem = (props) => {
-    const { name, price } = props
+    const { id, name, price, deleteItem } = props
 
     const inputRef = useRef(0)
 
-    function decrementCounter() {
+    const decrementCounter = () => {
         if (inputRef.current.value >= 0.1) {
             inputRef.current.value = (+inputRef.current.value - 0.1).toFixed(1)
         } else {
@@ -17,7 +17,7 @@ export const CartItem = (props) => {
         }
     }
 
-    function incrementCounter() {
+    const incrementCounter = () => {
         inputRef.current.value = (+inputRef.current.value + 0.1).toFixed(1)
     }
 
@@ -38,7 +38,6 @@ export const CartItem = (props) => {
                     </button>
                     <input
                         className={styles.productWeight}
-                        // value={counter.current}
                         type="number"
                         ref={inputRef}
                         onChange={() => {
@@ -53,7 +52,7 @@ export const CartItem = (props) => {
                 </div>
                 <div className={styles.aboutPrice}>
                     <div>79.8₽</div>
-                    <img src={productCart} alt="" />
+                    <button onClick={(e) => deleteItem(e, id)}><img src={productCart} alt="" /></button>
                 </div>
             </div>
         </div>
