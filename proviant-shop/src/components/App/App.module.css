@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: #FCFFF6;
+}
+
+@font-face {
+  font-family: 'MontserratRegular';
+  src: url("../../assets/fonts/Montserat/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'MontserratBold';
+  src: url("../../assets/fonts/Montserat/Montserrat-Bold.ttf");
+}
