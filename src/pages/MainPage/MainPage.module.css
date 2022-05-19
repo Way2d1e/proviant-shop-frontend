@@ -12,10 +12,7 @@
 
 .advantagesTitle {
     margin: 60px 0 25px 0;
-    font-family: "Open Sans", sans-serif;
-    font-size: 48px;
-    font-weight: 400;
-    line-height: 65px;
+    font: 400 45px/54px "Open Sans", sans-serif;
 }
 
 .advantageContainer{
@@ -37,19 +34,13 @@
 
 .itemTitle {
     margin:0;
-    font-family: "Open Sans", sans-serif;
-    font-size: 40px;
-    font-weight: 400;
-    line-height: 54px;
+    font: 400 30px/40px "Open Sans", sans-serif;
     text-align: center;
 }
 
 .itemBody {
     margin: 0;
     color: #898989;
-    font-family: "Open Sans", sans-serif;
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 34px;
+    font: 400 25px/34px "Open Sans", sans-serif;
     text-align: center;
 }

@@ -1,28 +1,40 @@
 import React, { useEffect, useState } from 'react'
-import styles from './CatalogPage.module.css'
 import { Loader } from '../../components/UI/Loader'
-import ProductService from '../../services/productsService'
+import main from '../../store/main'
+import { observer } from 'mobx-react-lite'
+import { Link } from 'react-router-dom'
+import {productsService} from "../../services/productsService";
 
-export const CatalogPage = () => {
+import styles from './CatalogPage.module.css'
+
+export const CatalogPage = observer(() => {
     const [catalogCategories, setCatalogCategories] = useState(null)
 
     useEffect(() => {
-        ProductService.getCategories().then((data) =>
+        productsService.getCategories().then((data) =>
             setCatalogCategories(data)
         )
     }, [])
+
     //TODO выпить пиво
     const createCatalogCategories = () => {
         return (
             <div className={styles.catalogCategoriesWrapper}>
-                {catalogCategories.map(({ id, image: img, name: title }) => (
-                    <div className={styles.catalogCategory} key={id}>
-                        <img src={img} alt="" draggable={false} />
-                        <div className={styles.catalogCategoryTitle}>
-                            <p>{title}</p>
-                        </div>
-                    </div>
-                ))}
+                {catalogCategories.map(
+                    ({ id, imagePath: img, name: title, nameEnglish, }) => (
+                        <Link to={`/categories/${nameEnglish}`} key={id}>
+                            <div
+                                className={styles.catalogCategory}
+                                onClick={() => main.selectCategory(id, title)}
+                            >
+                                <img src={img} alt="" draggable={false} />
+                                <div className={styles.catalogCategoryTitle}>
+                                    <p>{title}</p>
+                                </div>
+                            </div>
+                        </Link>
+                    )
+                )}
             </div>
         )
     }
@@ -35,4 +47,4 @@ export const CatalogPage = () => {
             {catalogCategories ? createCatalogCategories() : <Loader />}
         </div>
     )
-}
+})

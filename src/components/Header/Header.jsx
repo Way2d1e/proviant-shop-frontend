@@ -3,6 +3,7 @@ import Logo from '../../assets/images/Logo.svg'
 import Search from '../../assets/images/search.svg'
 import {BrowserRouter as Router, Link, NavLink} from 'react-router-dom'
 import { routes } from '../../router/router'
+
 import styles from './Header.module.css'
 
 export const Header = () => {

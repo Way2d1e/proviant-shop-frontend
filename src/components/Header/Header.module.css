@@ -42,14 +42,6 @@
     background: #FCFFF6;
 }
 
-.inputSearch input:focus::-webkit-search-cancel-button {
-    display: none;
-}
-
-.inputSearch input:hover::-webkit-search-cancel-button {
-    display: none;
-}
-
 .inputSearch:focus {
     border: 1px solid #46B14B;
 }
@@ -60,11 +52,15 @@
 }
 
 .btnSearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 42px;
     width: 8.57%;
-    background: #46B14B;
     border: none;
     border-radius: 0 10px 10px 0;
+    background: #46B14B;
+    cursor: pointer;
 }
 
 .navRef {
@@ -74,27 +70,25 @@
     font: 400 24px/29px "MontserratRegular", sans-serif;
 }
 
-.navLink {
-    color: #000;
-    text-decoration: none;
+.navLink:after {
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: #46B14B;
+    content: "";
+    transition: width .3s ease-in-out;
+}
+.navLink:hover:after,
+.navLink:focus:after {
+    width: 100%;
 }
 
 .navLink svg {
     fill: #000;
 }
 
-.navLink svg:hover {
-    fill: #46B14B;
-}
-
-.navLink:hover {
-    color: #46B14B;
-    cursor: pointer;
-}
-
 .navLinkActive {
     color: #46B14B;
-    text-decoration: underline;
 }
 
 .navLinkActive svg {

@@ -3,10 +3,20 @@ div{
 }
 
 .container {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.containerNoScroll{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .title {
@@ -88,12 +98,8 @@ input::placeholder {
     font: 700 20px/27px "Open Sans", sans-serif;
 }
 
-.containerButton {
-    display: flex;
-    justify-content: center;
-}
-
-.containerButton button {
+.btnMakeOrder {
+    align-self: center;
     width: 300px;
     height: 50px;
     border: none;

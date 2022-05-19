@@ -1,11 +1,13 @@
 import React, { useRef } from 'react'
-import styles from './CartItem.module.css'
 import Minus from '../../assets/images/minus.svg'
 import Plus from '../../assets/images/plus.svg'
 import productCart from '../../assets/images/cart.svg'
 
+import styles from './CartItem.module.css'
+
 export const CartItem = (props) => {
-    const { id, name, price, deleteItem } = props
+
+    const { id, img, title, category, price, deleteItem } = props
 
     const inputRef = useRef(0)
 
@@ -24,11 +26,12 @@ export const CartItem = (props) => {
     return (
         <div className={styles.cartItem}>
             <div className={styles.productInfo}>
-                <div className={styles.imgExample}></div>
+                <div className={styles.imgExample}>{img}</div>
                 <div className={styles.cartDescription}>
-                    <div className={styles.productName}>{name}</div>
-                    <div className={styles.productCategory}>Орехи</div>
-                    <div className={styles.productPrice}>{price} ₽ / кг</div>
+                    <div className={styles.productName}>{title}</div>
+                    <div className={styles.productCategory}>{category}</div>
+                    //TODO единицы измерения получать из пропсов
+                    <div className={styles.productPrice}>{price}₽ / кг</div>
                 </div>
             </div>
             <div className={styles.infoPrice}>
@@ -51,6 +54,7 @@ export const CartItem = (props) => {
                     </button>
                 </div>
                 <div className={styles.aboutPrice}>
+                    //TODO цену получать из пропсов
                     <div>79.8₽</div>
                     <button onClick={(e) => deleteItem(e, id)}><img src={productCart} alt="" /></button>
                 </div>

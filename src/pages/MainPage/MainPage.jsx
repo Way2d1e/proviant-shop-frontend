@@ -1,9 +1,10 @@
 import React from 'react'
-import styles from './MainPage.module.css'
 import Ruble from '../../assets/images/ruble.svg'
 import Pshenichka from '../../assets/images/pshenichka.svg'
 import Service from '../../assets/images/service.svg'
 import Expirience from '../../assets/images/expirience.svg'
+
+import styles from './MainPage.module.css'
 
 export const MainPage = () => {
     const advanteges = [

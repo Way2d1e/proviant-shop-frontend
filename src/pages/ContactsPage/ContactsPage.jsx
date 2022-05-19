@@ -1,10 +1,11 @@
 import React from 'react'
-import styles from './ContactsPage.module.css'
 import Support from '../../assets/images/contacts_header.png'
 import Call from '../../assets/images/Call.svg'
 import Mail from '../../assets/images/mail.svg'
 import Location from '../../assets/images/location.svg'
 import { YMaps, Map, Placemark } from 'react-yandex-maps'
+
+import styles from './ContactsPage.module.css'
 
 export const ContactsPage = () => {
     return (
