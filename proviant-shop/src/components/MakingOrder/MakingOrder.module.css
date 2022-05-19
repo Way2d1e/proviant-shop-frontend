@@ -1,0 +1,91 @@
+.fade:before {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    content: '';
+    background: #898989;
+    opacity: 0.75;
+}
+
+.container {
+    position: absolute;
+    left: 26%;
+    top: 10%;
+    z-index: 3;
+    width: 720px;
+    padding: 15px 30px 30px 30px;
+    border-radius: 10px;
+    font-family: "Open Sans", sans-serif;
+    background: #D3EAC3;
+}
+
+.wrapOrder {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    font-size: 25px;
+}
+
+.line {
+    margin: 15px 0;
+    border: 0;
+    border-top: 2px dashed #000000;
+}
+
+.infoBuyer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.infoBuyer input {
+    height: 40px;
+    padding-left: 15px;
+    border: 1px solid #46B14B;
+    border-radius: 10px;
+    font: 400 16px/32px "Open Sans",sans-serif;
+}
+
+.orderInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.textOrderInfo {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.btnOrder {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 22px;
+}
+
+.btnConfirm {
+    width: 175px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #46B14B;
+    cursor: pointer;
+}
+
+.btnCancel {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #46B14B;
+    background: #ffffff;
+    cursor: pointer;
+}

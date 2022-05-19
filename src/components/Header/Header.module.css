@@ -5,10 +5,10 @@
 }
 
 .logo{
-    margin: 30px 0;
+    margin-bottom: 30px;
 }
 
-.NavBar {
+.navBar {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,47 +17,49 @@
     background: #D3EAC3;
 }
 
-.NavBarContent {
+.navBarContent {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 79.86%;
 }
 
-.SearchContainer {
+.searchContainer {
     display: flex;
     align-items: center;
-    width: 700px;
+    width: 60%;
+    margin-right: 15px;
 }
 
-.InputSearch {
-    height: 41px;
+.inputSearch {
+    height: 40px;
     width: 91.43%;
     padding-left: 30px;
-    font-family: "MontserratRegular";
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
-    background: #FCFFF6;
     border: none;
-    outline: 1px solid #fff;
     border-radius: 10px 0 0 10px;
+    outline: 1px solid #fff;
+    font: 400 20px/24px "MontserratRegular", sans-serif;
+    background: #FCFFF6;
 }
 
-.InputSearch input:focus::-webkit-search-cancel-button {
+.inputSearch input:focus::-webkit-search-cancel-button {
     display: none;
 }
 
-.InputSearch:focus {
-    outline: 1px solid #46B14B;
+.inputSearch input:hover::-webkit-search-cancel-button {
+    display: none;
 }
 
-.InputSearch input::placeholder {
+.inputSearch:focus {
+    border: 1px solid #46B14B;
+}
+
+.inputSearch input::placeholder {
     display: flex;
     align-items: center;
 }
 
-.BtnSearch {
+.btnSearch {
     height: 42px;
     width: 8.57%;
     background: #46B14B;
@@ -65,22 +67,12 @@
     border-radius: 0 10px 10px 0;
 }
 
-.NavRef {
+.navRef {
     display: flex;
+    align-items: center;
     gap: 15px;
-    /*    color: black;*/
-    font-family: "MontserratRegular";
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 29px;
-
+    font: 400 24px/29px "MontserratRegular", sans-serif;
 }
-
-/*.NavRef a {*/
-/*    color: black;*/
-/*    text-decoration: none;*/
-/*}*/
-
 
 .navLink {
     color: #000;

@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './MainPage.module.css'
-import Ruble from '../../assets/Images/ruble.svg'
-import Pshenichka from '../../assets/Images/pshenichka.svg'
-import Service from '../../assets/Images/service.svg'
-import Expirience from '../../assets/Images/expirience.svg'
+import Ruble from '../../assets/images/ruble.svg'
+import Pshenichka from '../../assets/images/pshenichka.svg'
+import Service from '../../assets/images/service.svg'
+import Expirience from '../../assets/images/expirience.svg'
 
 export const MainPage = () => {
     const advanteges = [

@@ -1,0 +1,101 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.callHref:hover{
+    text-decoration: underline #46b14b;
+    color: #46b14b;
+}
+
+.mailHref:hover{
+    color: #46b14b;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.containerContacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 79.86%;
+}
+
+.title {
+    align-self: start;
+    padding: 30px 0;
+    font: 400 36px/54px "Open Sans", sans-serif;
+}
+
+.imgContacts {
+    width: 100%;
+}
+
+.data {
+    display: flex;
+    width: 100%;
+    margin-top: 125px;
+    margin-bottom: 100px;
+}
+
+.feedback {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+    width: 30%;
+}
+
+.feedbackTitle{
+    font: 400 30px/48px "Open Sans", sans-serif;
+}
+
+.feedback div{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 400 25px/34px "Open Sans", sans-serif;
+    color: #898989;
+}
+
+.feedback p{
+    margin: 0;
+    padding-left: 10px;
+}
+
+
+.map {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 70%;
+}
+
+.mapTitle{
+    margin: 0;
+    font: 400 30px/48px "Open Sans", sans-serif;
+}
+
+.mapBody{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 400 25px/34px "Open Sans", sans-serif;
+    color: #898989;
+}
+
+.map p{
+    margin: 0;
+}
+
+.mapSize{
+    width: 700px;
+    height: 400px;
+    border: 1px solid #558203;
+}

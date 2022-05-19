@@ -1,0 +1,112 @@
+div{
+    cursor: default;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    width: 79.86%;
+    margin-top: 30px;
+    font: 400 36px/54px "Open Sans", sans-serif;
+}
+
+.containerCart {
+    display: flex;
+    justify-content: space-between;
+    width: 79.86%;
+    margin: 30px 0;
+}
+
+.cartItems {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 60.87%;
+}
+
+.finalCheck {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-sizing: border-box;
+    width: 34.78%;
+    height: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #D3EAC3;
+}
+
+p {
+    margin: 0;
+}
+
+.promoCode {
+    font: 600 24px/32px "Open Sans", sans-serif;
+}
+
+.promoCodeInput {
+    box-sizing: border-box;
+    width: 300px;
+    height: 40px;
+    padding-left: 15px;
+    margin-top: 10px;
+    border: 1px solid #46B14B;
+    border-radius: 10px;
+    font: 400 16px/22px "Open Sans", sans-serif;
+    text-align: left;
+    background: transparent;
+}
+
+input:focus::-webkit-search-cancel-button {
+    display: none;
+}
+
+input:focus {
+    outline: 1px solid #46B14B;
+}
+
+input::placeholder {
+    display: flex;
+    align-items: center;
+}
+
+.containerSum {
+    display: flex;
+    justify-content: space-between;
+}
+
+.intermediate {
+    font: 400 20px/27px "Open Sans", sans-serif;
+}
+
+.total {
+    font: 700 20px/27px "Open Sans", sans-serif;
+}
+
+.containerButton {
+    display: flex;
+    justify-content: center;
+}
+
+.containerButton button {
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    color: #ffffff;
+    font: 700 16px/22px "Open Sans", sans-serif;
+    cursor: pointer;
+    background: #46B14B;
+}
+
+.line {
+    width: 100%;
+    margin: 5px 0;
+    border: 0;
+    border-top: 2px dashed #898989;
+}

@@ -1,0 +1,96 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo{
+    margin-bottom: 30px;
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 75px;
+    background: #D3EAC3;
+}
+
+.navBarContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 79.86%;
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    margin-right: 15px;
+}
+
+.inputSearch {
+    height: 40px;
+    width: 91.43%;
+    padding-left: 30px;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    outline: 1px solid #fff;
+    font: 400 20px/24px "MontserratRegular", sans-serif;
+    background: #FCFFF6;
+}
+
+.inputSearch:focus {
+    border: 1px solid #46B14B;
+}
+
+.inputSearch input::placeholder {
+    display: flex;
+    align-items: center;
+}
+
+.btnSearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    width: 8.57%;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    background: #46B14B;
+    cursor: pointer;
+}
+
+.navRef {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font: 400 24px/29px "MontserratRegular", sans-serif;
+}
+
+.navLink:after {
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: #46B14B;
+    content: "";
+    transition: width .3s ease-in-out;
+}
+.navLink:hover:after,
+.navLink:focus:after {
+    width: 100%;
+}
+
+.navLink svg {
+    fill: #000;
+}
+
+.navLinkActive {
+    color: #46B14B;
+}
+
+.navLinkActive svg {
+    fill: #46B14B;
+}

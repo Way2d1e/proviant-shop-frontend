@@ -1,0 +1,39 @@
+.admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+}
+
+.adminPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 250px;
+    padding: 30px;
+    background-color: #46b14b;
+    border-radius: 10px;
+}
+
+.adminTitle {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 25px;
+}
+
+.adminData {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btnAuth {
+    height: 40px;
+}
+
+.btnAuth button {
+    display: flex;
+    justify-content: center;
+}

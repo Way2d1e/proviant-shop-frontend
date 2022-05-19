@@ -1,0 +1,10 @@
+#dependecies
+/node_modules
+/dist
+#misc
+.DS_Store
+/*.env*
+.eslintcache
+.vscode
+.idea
+
