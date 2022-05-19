@@ -1,21 +1,16 @@
 import React, {useEffect, useState} from 'react'
-import styles from './CartPage.module.css'
 import {productsService} from '../../services/productsService'
 import {CartItem} from '../../components/CartItem'
 import {Loader} from '../../components/UI/Loader'
 import {MakingOrder} from "../../components/MakingOrder";
 
+import styles from './CartPage.module.css'
+
 export const CartPage = () => {
 
     function makeOrder() {
         setIsActive(!isActive)
-        document.style.overflow = 'hidden';
     }
-
-        // window.addEventListener('scroll', (e) => {
-        //     window.scrollTo(0, 0);
-        // })
-
 
     const [isActive, setIsActive] = useState(false)
     const [cartProducts, setCartProducts] = useState(null)
@@ -43,6 +38,7 @@ export const CartPage = () => {
                             <CartItem
                                 id={product.id}
                                 title={product.title}
+                                weight = {product.weight}
                                 price={product.price}
                                 key={product.id}
                                 deleteItem={deleteItem}

@@ -1,9 +1,10 @@
 import React, {useRef} from 'react'
-import styles from '../CategoryItem/CategoryItem.module.css'
 import Minus from '../../assets/images/minus.svg'
 import Plus from '../../assets/images/plus.svg'
 import productCart from '../../assets/images/white-cart.svg'
 import {productsService} from "../../services/productsService";
+
+import styles from '../CategoryItem/CategoryItem.module.css'
 
 export const CategoryItem = (props) => {
     const {id, img, title, price, weight} = props

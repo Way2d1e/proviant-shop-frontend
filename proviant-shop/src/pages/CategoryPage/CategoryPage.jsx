@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import styles from '../CategoryPage/CategoryPage.module.css'
 import {Loader} from '../../components/UI/Loader'
 import main from '../../store/main'
 import {CSSTransition} from "react-transition-group";
@@ -8,6 +7,8 @@ import {Link, useLocation, useParams} from 'react-router-dom'
 import {CategoryItem} from '../../components/CategoryItem'
 import Arrow from '../../assets/images/arrow.svg'
 import {productsService} from "../../services/productsService";
+
+import styles from '../CategoryPage/CategoryPage.module.css'
 
 
 export const CategoryPage = observer(() => {

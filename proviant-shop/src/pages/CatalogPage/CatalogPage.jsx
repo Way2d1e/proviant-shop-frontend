@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { Loader } from '../../components/UI/Loader'
 import main from '../../store/main'
 import { observer } from 'mobx-react-lite'
-
-import styles from './CatalogPage.module.css'
 import { Link } from 'react-router-dom'
 import {productsService} from "../../services/productsService";
+
+import styles from './CatalogPage.module.css'
 
 export const CatalogPage = observer(() => {
     const [catalogCategories, setCatalogCategories] = useState(null)
