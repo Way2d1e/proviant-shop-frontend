@@ -1,13 +1,15 @@
 .categoryItem {
     display: flex;
     flex-direction: column;
+    /*width: 250px;*/
     padding: 10px;
     border-radius: 10px;
     background: #D3EAC3;
 }
 
-.imgExample {
+.productImage {
     height: 150px;
+    border-radius: 10px;
 }
 
 .productName {

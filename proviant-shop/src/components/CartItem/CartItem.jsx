@@ -5,7 +5,7 @@ import Plus from '../../assets/images/plus.svg'
 import productCart from '../../assets/images/cart.svg'
 
 export const CartItem = (props) => {
-    const { id, name, price, deleteItem } = props
+    const { id, img, title, category, price, deleteItem } = props
 
     const inputRef = useRef(0)
 
@@ -24,11 +24,11 @@ export const CartItem = (props) => {
     return (
         <div className={styles.cartItem}>
             <div className={styles.productInfo}>
-                <div className={styles.imgExample}></div>
+                <div className={styles.imgExample}>{img}</div>
                 <div className={styles.cartDescription}>
-                    <div className={styles.productName}>{name}</div>
-                    <div className={styles.productCategory}>Орехи</div>
-                    <div className={styles.productPrice}>{price} ₽ / кг</div>
+                    <div className={styles.productName}>{title}</div>
+                    <div className={styles.productCategory}>{category}</div>
+                    <div className={styles.productPrice}>{price}₽ / кг</div>
                 </div>
             </div>
             <div className={styles.infoPrice}>

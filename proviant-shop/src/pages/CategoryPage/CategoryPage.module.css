@@ -131,8 +131,8 @@
 
 .categoryItemsWrapper {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(4, 21.741%);
+    gap: 50px;
     padding-bottom: 90px;
 }
 

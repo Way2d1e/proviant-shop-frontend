@@ -2,12 +2,12 @@ import React, {useEffect, useState} from 'react'
 import styles from '../CategoryPage/CategoryPage.module.css'
 import {Loader} from '../../components/UI/Loader'
 import main from '../../store/main'
-import {observable} from 'mobx'
 import {CSSTransition} from "react-transition-group";
 import {observer} from 'mobx-react-lite'
-import {Link} from 'react-router-dom'
+import {Link, useLocation, useParams} from 'react-router-dom'
 import {CategoryItem} from '../../components/CategoryItem'
 import Arrow from '../../assets/images/arrow.svg'
+import {productsService} from "../../services/productsService";
 
 
 export const CategoryPage = observer(() => {
@@ -31,48 +31,34 @@ export const CategoryPage = observer(() => {
 
     const createFilterItem = (items) => {
         return (items.map((item) => (
-            <div onClick={() => closeFilterItem(item.title)} className={styles.selectFilterItem}>{item.title}</div>)
+            <div onClick={() => closeFilterItem(item.title)} className={styles.selectFilterItem}
+                 key={item.id}>{item.title}</div>)
         ))
     }
 
-    const [category, setCategory] = useState(main.getCategory())
-    const [categoryItems, setCategoryItems] = useState([
-        {
-            id: 0,
-            price: 0,
-            name: 'hui',
-        },
-        {
-            id: 1,
-            price: 0,
-            name: 'hui',
-        },
-        {
-            id: 2,
-            price: 0,
-            name: 'hui',
-        },
-        {
-            id: 3,
-            price: 0,
-            name: 'hui',
-        },
-        {
-            id: 4,
-            price: 0,
-            name: 'hui',
-        },
-    ])
+    const [categoryItems, setCategoryItems] = useState(null)
 
     useEffect(() => {
-        // console.log()
+        const category = main.getCategory().categoryId
+        productsService.getProducts(category).then((data) => {
+            setCategoryItems(data)
+        })
     }, [])
+
+    const image = 'src/assets/images/vegetables/cucumber.jpg'
 
     const createCategoryItems = () => {
         return (
             <div className={styles.categoryItemsWrapper}>
-                {categoryItems.map(({id, price, name: title}) => (
-                    <CategoryItem title={'хуй'} key={id}/>
+                {categoryItems.map((
+                    {id, imagePath: img, name: title, price}
+                ) => (
+                    <CategoryItem
+                        img={image}
+                        title={title}
+                        price={price}
+                        key={id}
+                    />
                 ))}
             </div>
         )
@@ -85,10 +71,11 @@ export const CategoryPage = observer(() => {
                     <Link to="/catalog">
                         <span>Каталог </span>
                     </Link>
-                    / {category.title}
+                    / {main.getCategory().title}
                 </div>
                 <div className={styles.filters}>
-                    <div className={styles.activeFilter} onClick={() => setActive(!isActive)}>{activeFilter}<img className={isActive ? styles.arrowDefault : styles.arrowAnimation} src={Arrow} alt=""/></div>
+                    <div className={styles.activeFilter} onClick={() => setActive(!isActive)}>{activeFilter}<img
+                        className={isActive ? styles.arrowDefault : styles.arrowAnimation} src={Arrow} alt=""/></div>
                     <CSSTransition
                         in={isActive}
                         classNames={
@@ -107,7 +94,7 @@ export const CategoryPage = observer(() => {
                     </CSSTransition>
                 </div>
             </div>
-            {createCategoryItems()}
+            {categoryItems ? createCategoryItems() : <Loader/>}
         </div>
     )
 })

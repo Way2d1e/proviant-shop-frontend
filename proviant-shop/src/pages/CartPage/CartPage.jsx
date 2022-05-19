@@ -1,18 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import styles from './CartPage.module.css'
-import { CartItem } from '../../components/CartItem'
-import productsService from '../../services/productsService'
-import { Loader } from '../../components/UI/Loader'
+import {productsService} from '../../services/productsService'
+import {CartItem} from '../../components/CartItem'
+import {Loader} from '../../components/UI/Loader'
+import {MakingOrder} from "../../components/MakingOrder";
 
-export const CartPage = (props) => {
+export const CartPage = () => {
+
+    function makeOrder() {
+        setIsActive(!isActive)
+        document.style.overflow = 'hidden';
+    }
+
+        // window.addEventListener('scroll', (e) => {
+        //     window.scrollTo(0, 0);
+        // })
+
+
+    const [isActive, setIsActive] = useState(false)
     const [cartProducts, setCartProducts] = useState(null)
-    // const [deleteCartItem, setDeleteCartItem ]  = useState(null)
 
     useEffect(() => {
         productsService.getCartProducts().then((products) => {
             setCartProducts(products)
         })
-    })
+    }, [])
 
     const deleteItem = (e, id) => {
         const products = cartProducts.filter((item, index) => {
@@ -22,7 +34,7 @@ export const CartPage = (props) => {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={isActive ? styles.containerNoScroll : styles.container}>
             <div className={styles.title}>Корзина</div>
             <div className={styles.containerCart}>
                 <div className={styles.cartItems}>
@@ -30,14 +42,14 @@ export const CartPage = (props) => {
                         cartProducts.map((product) => (
                             <CartItem
                                 id={product.id}
-                                name={product.name}
+                                title={product.title}
                                 price={product.price}
                                 key={product.id}
                                 deleteItem={deleteItem}
                             />
                         ))
                     ) : (
-                        <Loader />
+                        <Loader/>
                     )}
                 </div>
                 <div className={styles.finalCheck}>
@@ -47,7 +59,7 @@ export const CartPage = (props) => {
                         type="text"
                         placeholder="Введите промокод"
                     />
-                    <hr className={styles.line} />
+                    <hr className={styles.line}/>
                     <div className={styles.containerSum}>
                         <div className={styles.intermediate}>Сумма заказа:</div>
                         <div className={styles.intermediate}>123р</div>
@@ -56,16 +68,17 @@ export const CartPage = (props) => {
                         <div className={styles.intermediate}>Вес заказа:</div>
                         <div className={styles.intermediate}>0.3кг</div>
                     </div>
-                    <hr className={styles.line} />
+                    <hr className={styles.line}/>
                     <div className={styles.containerSum}>
                         <div className={styles.total}>Итого к оплате</div>
                         <div className={styles.total}>123р</div>
                     </div>
-                    <div className={styles.containerButton}>
-                        <button>Оформление заказа</button>
-                    </div>
+                    <button className={styles.btnMakeOrder} onClick={() => makeOrder()}>
+                        Оформление заказа
+                    </button>
                 </div>
             </div>
+            {isActive ? <MakingOrder closeModal={setIsActive}/> : null}
         </div>
     )
 }

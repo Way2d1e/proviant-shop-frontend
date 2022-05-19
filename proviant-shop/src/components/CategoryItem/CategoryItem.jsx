@@ -1,39 +1,33 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useRef} from 'react'
 import styles from '../CategoryItem/CategoryItem.module.css'
 import Minus from '../../assets/images/minus.svg'
 import Plus from '../../assets/images/plus.svg'
 import productCart from '../../assets/images/white-cart.svg'
-import ProductService from "../../services/productsService";
+import {productsService} from "../../services/productsService";
 
 export const CategoryItem = (props) => {
-    const {id, name, price} = props
+    const {id, img, title, price, weight} = props
 
-    const inputRef = useRef(0)
-
-    const [categoryItems, setCategoryItems] = useState(null)
-
-    useEffect(() => {
-        ProductService.getCategories().then((data) =>
-            setCategoryItems(data)
-        )
-    }, [])
+    const weightRef = useRef(0)
 
     const decrementCounter = () => {
-        if (inputRef.current.value >= 0.1) {
-            inputRef.current.value = (+inputRef.current.value - 0.1).toFixed(1)
+        if (weightRef.current.value >= 0.1) {
+            weightRef.current.value = (+weightRef.current.value - 0.1).toFixed(1)
         } else {
-            return inputRef.current.value
+            return weightRef.current.value
         }
     }
 
     const incrementCounter = () => {
-        inputRef.current.value = (+inputRef.current.value + 0.1).toFixed(1)
+        weightRef.current.value = (+weightRef.current.value + 0.1).toFixed(1)
     }
+
+    let interval
 
     return (
         <div className={styles.categoryItem}>
-            <div className={styles.imgExample}>тут будет имг</div>
-            <div className={styles.productName}>{name}</div>
+            <img className={styles.productImage} src={img}/>
+            <div className={styles.productName}>{title}</div>
             <div className={styles.productPrice}>{price} ₽ / кг</div>
             <div className={styles.aboutWeight}>
                 <button onClick={() => decrementCounter()}>
@@ -42,19 +36,36 @@ export const CategoryItem = (props) => {
                 <input
                     className={styles.productWeight}
                     type="number"
-                    ref={inputRef}
+                    ref={weightRef}
                     onChange={() => {
-                        inputRef.current.value <= 0
-                            ? (inputRef.current.value = '')
+                        weightRef.current.value <= 0
+                            ? (weightRef.current.value = '')
                             : ''
                     }}
                 />
-                <button onClick={() => incrementCounter()}>
+                <button onClick={() => incrementCounter()} onMouseDown={() => {
+                    interval = setInterval(() => incrementCounter(), 200)
+                }}
+                        onMouseUp={() => clearInterval(interval)}
+                >
                     <img src={Plus} alt=""/>
                 </button>
             </div>
             <div className={styles.aboutPrice}>
-                <button>В корзину <img src={productCart} alt="cart"/></button>
+                <button
+                    onClick={() => productsService.addProductToCard({
+                        id,
+                        img,
+                        title,
+                        price,
+                        weight: weightRef.current.value
+                    })}
+                >
+                    <span>
+                         В корзину
+                    </span>
+                    <img src={productCart} alt="cart"/>
+                </button>
             </div>
         </div>
     )

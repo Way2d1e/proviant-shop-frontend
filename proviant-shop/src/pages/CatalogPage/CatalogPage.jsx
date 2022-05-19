@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Loader } from '../../components/UI/Loader'
-import ProductService from '../../services/productsService'
 import main from '../../store/main'
 import { observer } from 'mobx-react-lite'
 
 import styles from './CatalogPage.module.css'
 import { Link } from 'react-router-dom'
+import {productsService} from "../../services/productsService";
 
 export const CatalogPage = observer(() => {
     const [catalogCategories, setCatalogCategories] = useState(null)
 
     useEffect(() => {
-        ProductService.getCategories().then((data) =>
+        productsService.getCategories().then((data) =>
             setCatalogCategories(data)
         )
     }, [])
@@ -21,8 +21,8 @@ export const CatalogPage = observer(() => {
         return (
             <div className={styles.catalogCategoriesWrapper}>
                 {catalogCategories.map(
-                    ({ id, imagePath: img, name: title }) => (
-                        <Link to="/categories" key={id}>
+                    ({ id, imagePath: img, name: title, nameEnglish, }) => (
+                        <Link to={`/categories/${nameEnglish}`} key={id}>
                             <div
                                 className={styles.catalogCategory}
                                 onClick={() => main.selectCategory(id, title)}

@@ -6,6 +6,10 @@ class Main {
         category: {
             categoryId: '',
             categoryTitle: ''
+        },
+        productItem: {
+            productItemId: '',
+            productItemTitle: ''
         }
     }
 
@@ -13,16 +17,22 @@ class Main {
         makeObservable(this, {main: observable, selectCategory: action} )
     }
 
-    selectCategory(id, title) {
-        this.main.category.categoryId = id
+    selectCategory(categoryId, title) {
+        this.main.category.categoryId = categoryId
         this.main.category.categoryTitle = title
+        console.log(this.main.category.categoryId)
     }
 
     getCategory() {
         return {
-            id: this.main.category.categoryId,
+            categoryId: this.main.category.categoryId,
             title: this.main.category.categoryTitle
         }
+    }
+
+    selectProductItem(id, title) {
+        this.main.productItem.productItemid = id
+        this.main.productItem.productItemTitle = title
     }
 }
 
