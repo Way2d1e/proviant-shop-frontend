@@ -13,20 +13,26 @@ export const CartPage = () => {
     }
 
     const [isActive, setIsActive] = useState(false)
-    const [cartProducts, setCartProducts] = useState(null)
+    const [cartProducts, setCartProducts] = useState([])
+    const [finalPrice, setFinalPrice] = useState()
 
     useEffect(() => {
         productsService.getCartProducts().then((products) => {
-            setCartProducts(products)
+            setCartProducts(products || [])
         })
     }, [])
 
     const deleteItem = (e, id) => {
         const products = cartProducts.filter((item, index) => {
+            console.log(id)
             return item.id !== id
         })
         window.localStorage.setItem('products', JSON.stringify(products))
     }
+
+    let result = cartProducts.reduce(
+        (acc, product) => acc + product.price * product.weight, 0
+    )
 
     return (
         <div className={isActive ? styles.containerNoScroll : styles.container}>
@@ -37,9 +43,12 @@ export const CartPage = () => {
                         cartProducts.map((product) => (
                             <CartItem
                                 id={product.id}
+                                img={product.img}
                                 title={product.title}
-                                weight = {product.weight}
+                                weight={product.weight}
                                 price={product.price}
+                                currentPrice={product.currentPrice}
+                                typeMeasuring={product.typeMeasuring}
                                 key={product.id}
                                 deleteItem={deleteItem}
                             />
@@ -49,13 +58,6 @@ export const CartPage = () => {
                     )}
                 </div>
                 <div className={styles.finalCheck}>
-                    <div className={styles.promoCode}>ЕСТЬ ПРОМОКОД?</div>
-                    <input
-                        className={styles.promoCodeInput}
-                        type="text"
-                        placeholder="Введите промокод"
-                    />
-                    <hr className={styles.line}/>
                     <div className={styles.containerSum}>
                         <div className={styles.intermediate}>Сумма заказа:</div>
                         <div className={styles.intermediate}>123р</div>
@@ -67,7 +69,9 @@ export const CartPage = () => {
                     <hr className={styles.line}/>
                     <div className={styles.containerSum}>
                         <div className={styles.total}>Итого к оплате</div>
-                        <div className={styles.total}>123р</div>
+                        <div className={styles.total}>
+                            {result} ₽
+                        </div>
                     </div>
                     <button className={styles.btnMakeOrder} onClick={() => makeOrder()}>
                         Оформление заказа
