@@ -16,17 +16,21 @@
     top: 10%;
     z-index: 3;
     width: 720px;
+    height: 400px;
     padding: 15px 30px 30px 30px;
     border-radius: 10px;
     font-family: "Open Sans", sans-serif;
-    background: #D3EAC3;
+    background: #ffffff;
 }
 
 .wrapOrder {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 60px;
-    font-size: 25px;
+}
+
+.wrapOrder p{
+    font: 600 25px/34px "Open Sans", sans-serif;
 }
 
 .line {
@@ -36,9 +40,10 @@
 }
 
 .infoBuyer {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .infoBuyer input {
@@ -46,7 +51,7 @@
     padding-left: 15px;
     border: 1px solid #46B14B;
     border-radius: 10px;
-    font: 400 16px/32px "Open Sans",sans-serif;
+    font: 400 16px/32px "Open Sans", sans-serif;
 }
 
 .orderInfo {
@@ -57,7 +62,7 @@
 
 .textOrderInfo {
     font-size: 16px;
-    line-height: 22px;
+    line-height: 25px;
 }
 
 .btnOrder {
@@ -81,11 +86,55 @@
 .btnCancel {
     width: 100px;
     height: 40px;
-    border: none;
+    border: #46b14b 1px solid;
     border-radius: 50px;
+    color: #46B14B;
     font-size: 14px;
     font-weight: bold;
-    color: #46B14B;
     background: #ffffff;
+    cursor: pointer;
+}
+
+.wrapApproveOrder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    text-align: center;
+}
+
+.approveTitle {
+    color: #46B14B;
+    font: 700 40px/54px "Open Sans", sans-serif;
+}
+
+.approveBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.approveOrder {
+    margin-top: 20px;
+    font: 400 36px/49px "Open Sans", sans-serif;
+}
+
+.approveOrderNumber{
+    color: #46b14b;
+    font: 700 36px/49px "Open Sans", sans-serif;
+}
+
+.approveButton {
+    align-self: flex-end;
+    align-items: center;
+    width: 320px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    color: #FFFFFF;
+    font: 400 24px/32px "Open Sans", sans-serif;
+    background: #46b14b;
     cursor: pointer;
 }
