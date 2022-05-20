@@ -8,12 +8,13 @@
 }
 
 .productImage {
+    z-index: 10;
     height: 150px;
     border-radius: 10px;
 }
 
 .productName {
-    font: 400 30px/41px "Open Sans",sans-serif;
+    font: 400 25px/35px "Open Sans",sans-serif;
 }
 
 .productPrice {

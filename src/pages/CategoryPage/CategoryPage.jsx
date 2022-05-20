@@ -39,6 +39,7 @@ export const CategoryPage = observer(() => {
 
     const [categoryItems, setCategoryItems] = useState(null)
 
+
     useEffect(() => {
         const category = main.getCategory().categoryId
         productsService.getProducts(category).then((data) => {
@@ -46,18 +47,18 @@ export const CategoryPage = observer(() => {
         })
     }, [])
 
-    const image = 'src/assets/images/vegetables/cucumber.jpg'
-
     const createCategoryItems = () => {
         return (
             <div className={styles.categoryItemsWrapper}>
                 {categoryItems.map((
-                    {id, imagePath: img, name: title, price}
+                    {id, imagePath: img, name: title, price, typeMeasuring}
                 ) => (
                     <CategoryItem
-                        img={image}
+                        id={id}
+                        img={img}
                         title={title}
                         price={price}
+                        typeMeasuring={typeMeasuring}
                         key={id}
                     />
                 ))}

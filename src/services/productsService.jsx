@@ -26,6 +26,15 @@ export const productsService = {
         }
     },
 
+    async addFinalCheck(check) {
+        if (localStorage.getItem('checks')) {
+            const checks = JSON.parse(localStorage.getItem('checks'))
+            localStorage.setItem('checks', JSON.stringify([...checks, check]))
+        } else {
+            localStorage.setItem('checks', JSON.stringify([check]))
+        }
+    },
+
     async setCartProduct() {
         const products = await fetch('http://localhost:3001/products').then((res) => res.json())
         await window.localStorage.setItem('products', JSON.stringify(products))
