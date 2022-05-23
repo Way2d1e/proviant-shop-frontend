@@ -30,8 +30,8 @@ export default function Slider(props) {
 
     return (
         <div className="container-slider">
-            {slides.map((slide, index) => {
-                return (
+            {slides.map((slide, index) =>
+                 (
                     <div
                         key={slide.id}
                         className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
@@ -41,7 +41,7 @@ export default function Slider(props) {
                         />
                     </div>
                 )
-            })}
+            )}
             <BtnSlider moveSlide={nextSlide} direction={"next"}/>
             <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
 

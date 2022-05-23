@@ -6,16 +6,16 @@ import axios from "axios";
 export const MakingOrder = (props) => {
     const { closeModal } = props
 
-    const postRequest = (e) => {
-        e.preventDefault()
-        console.log(postOrder)
-        axios.post("http://26.85.60.200:8080/order", postOrder).then(Response =>{
-            console.log(Response)
-        }).catch(error =>{
-            console.log(error)
-        })
-
-    }
+    // const postRequest = (e) => {
+    //     e.preventDefault()
+    //     console.log(postOrder)
+    //     axios.post("http://26.85.60.200:8080/order", postOrder).then(Response =>{
+    //         console.log(Response)
+    //     }).catch(error =>{
+    //         console.log(error)
+    //     })
+    //
+    // }
 
     return (
         <div
