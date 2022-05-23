@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
-import styles from './MakingOrder.module.css'
-import postOrder from '../../db/post.json'
-import axios from 'axios'
+import React, { useRef, useState } from 'react'
 import { productsService } from '../../services/productsService'
 import { Loader } from '../UI/Loader'
+
+import styles from './MakingOrder.module.css'
 
 export const MakingOrder = (props) => {
     const { closeModal } = props
