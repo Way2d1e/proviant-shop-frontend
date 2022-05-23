@@ -16,7 +16,6 @@ export const CatalogPage = observer(() => {
         )
     }, [])
 
-    //TODO выпить пиво
     const createCatalogCategories = () => {
         return (
             <div className={styles.catalogCategoriesWrapper}>

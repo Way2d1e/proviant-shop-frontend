@@ -16,6 +16,23 @@ export const CartPage = () => {
     const [cartProducts, setCartProducts] = useState([])
     const [finalPrice, setFinalPrice] = useState()
 
+    // {
+    //     const products = JSON.parse(localStorage.getItem('products'))
+    //     const orderItems = products.map(({id, weight, name, price, measuringType}) => {
+    //         return { id, name, weight, price, measuringType }
+    //     })
+    //
+    //     console.log(orders)
+    //
+    //     fetch(url, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-type": "application/json"
+    //         },
+    //         body: JSON.stringify(orders)
+    //     })
+    // }
+
     useEffect(() => {
         productsService.getCartProducts().then((products) => {
             setCartProducts(products || [])
@@ -60,7 +77,7 @@ export const CartPage = () => {
                 <div className={styles.finalCheck}>
                     <div className={styles.containerSum}>
                         <div className={styles.intermediate}>Сумма заказа:</div>
-                        <div className={styles.intermediate}>123р</div>
+                        <div className={styles.intermediate}>{result} р</div>
                     </div>
                     <div className={styles.containerSum}>
                         <div className={styles.intermediate}>Вес заказа:</div>
@@ -78,7 +95,7 @@ export const CartPage = () => {
                     </button>
                 </div>
             </div>
-            {isActive ? <MakingOrder closeModal={setIsActive}/> : null}
+            {isActive ? <MakingOrder  closeModal={setIsActive}/> : null}
         </div>
     )
 }

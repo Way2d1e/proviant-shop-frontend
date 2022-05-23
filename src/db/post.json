@@ -1,8 +1,7 @@
 {
-  "id": 1,
+  "id": 193,
   "orderItems": [
     {
-      "id": 1,
       "productID": 1,
       "pricePerProduct": 123,
       "productName": "asd",
@@ -14,7 +13,7 @@
   "name": "sd",
   "middleName": "asd",
   "phoneNumber": 123123,
-  "date": "1999-12-31T21:00:00.000+00:00",
-  "price": 123.00,
-  "email": "texatema@gmail.com"
+  "orderDate": "1999-12-31T21:00:00.000+00:00",
+  "orderPrice": null,
+  "email": "hasp832@gmail.com"
 }

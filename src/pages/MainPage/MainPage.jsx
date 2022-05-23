@@ -5,6 +5,8 @@ import Service from '../../assets/images/service.svg'
 import Expirience from '../../assets/images/expirience.svg'
 
 import styles from './MainPage.module.css'
+import Slider from "../../components/Slider/Slider";
+import Slide from '../../assets/images/slider/ad.png'
 
 export const MainPage = () => {
     const advanteges = [
@@ -34,6 +36,12 @@ export const MainPage = () => {
         },
     ]
 
+    const slides =[
+        {id: 1, img: Slide},
+        {id: 2, img: Slide},
+        {id: 3, img: Slide},
+    ]
+
     const createAdvantages = (advantages) => {
         return (
             <div className={styles.advantageContainer}>
@@ -52,6 +60,7 @@ export const MainPage = () => {
     return (
         <div className={styles.container}>
             <div className={styles.advantages}>
+                <Slider  slides={slides}/>
                 <p className={styles.advantagesTitle}>
                     Магазин вкусных продуктов
                 </p>

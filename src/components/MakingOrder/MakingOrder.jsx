@@ -1,8 +1,21 @@
 import React, { useState } from 'react'
 import styles from './MakingOrder.module.css'
+import postOrder from '../../db/post.json'
+import axios from "axios";
 
 export const MakingOrder = (props) => {
     const { closeModal } = props
+
+    // const postRequest = (e) => {
+    //     e.preventDefault()
+    //     console.log(postOrder)
+    //     axios.post("http://26.85.60.200:8080/order", postOrder).then(Response =>{
+    //         console.log(Response)
+    //     }).catch(error =>{
+    //         console.log(error)
+    //     })
+    //
+    // }
 
     return (
         <div
@@ -22,11 +35,11 @@ export const MakingOrder = (props) => {
                 <hr className={styles.line} />
                 <div className={styles.wrapOrder}>
                     <div className={styles.infoBuyer}>
-                        <input placeholder='Иванов' type="text" />
-                        <input placeholder='Иван' type="text" />
-                        <input placeholder='Иванович' type="text" />
-                        <input placeholder='ivan@mail.ru' type="email" />
-                        <input placeholder='81234567890' type="tel" />
+                        <input placeholder="Иванов" type="text" />
+                        <input placeholder="Иван" type="text" />
+                        <input placeholder="Иванович" type="text" />
+                        <input placeholder="ivan@mail.ru" type="email" />
+                        <input placeholder="81234567890" type="tel" />
                     </div>
                     <div className={styles.orderInfo}>
                         <div className={styles.textOrderInfo}>
@@ -46,7 +59,10 @@ export const MakingOrder = (props) => {
                             любым удобным для Вас способом.
                         </div>
                         <div className={styles.btnOrder}>
-                            <button className={styles.btnConfirm}>
+                            <button
+                                className={styles.btnConfirm}
+                                onClick={(e) => postRequest(e)}
+                            >
                                 Подтвердить заказ
                             </button>
                             <button
