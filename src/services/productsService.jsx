@@ -17,7 +17,7 @@ export const productsService = {
         return await this.getResource(`category/${category}/product`)
     },
 
-    async addProductToCard(product) {
+     addProductToCard(product) {
         if (localStorage.getItem('products')) {
             const products = JSON.parse(localStorage.getItem('products'))
             localStorage.setItem(

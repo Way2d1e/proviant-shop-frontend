@@ -39,7 +39,7 @@ export const CategoryItem = (props) => {
                 position="bottom-left"
             />
 
-            <img className={styles.productImage} src={img} />
+            <div className={styles.productImageBack}><img className={styles.productImage} src={img} /></div>
             <div className={styles.productName}>{title}</div>
             <div className={styles.productPrice}>{price} ₽ / {typeMeasuring}</div>
             <div className={styles.aboutWeight}>
