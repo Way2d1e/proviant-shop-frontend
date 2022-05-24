@@ -7,10 +7,19 @@
     background: #D3EAC3;
 }
 
+.productImageBack{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 100%;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
 .productImage {
     z-index: 10;
     height: 150px;
-    border-radius: 10px;
 }
 
 .productName {
