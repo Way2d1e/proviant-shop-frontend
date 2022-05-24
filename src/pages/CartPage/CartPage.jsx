@@ -4,9 +4,9 @@ import {CartItem} from '../../components/CartItem'
 import {Loader} from '../../components/UI/Loader'
 import {MakingOrder} from "../../components/MakingOrder";
 import products from "../../store/products";
+import {observer} from "mobx-react-lite";
 
 import styles from './CartPage.module.css'
-import {observer} from "mobx-react-lite";
 
 export const CartPage = observer(() => {
 

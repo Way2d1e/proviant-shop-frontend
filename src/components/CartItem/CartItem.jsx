@@ -4,17 +4,12 @@ import Plus from '../../assets/images/plus.svg'
 import productCart from '../../assets/images/cart.svg'
 import { observer } from 'mobx-react-lite'
 import products from '../../store/products'
+import {productsService} from "../../services/productsService";
 
 import styles from './CartItem.module.css'
-import {productsService} from "../../services/productsService";
 
 export const CartItem = observer((props) => {
     const { id, img, title, price, weight, typeMeasuring } = props
-
-    // console.log('weight', weight)
-    // console.log('price', price)
-
-    // const [productPrice, setProductPrice] = useState(weight * price)
 
     function onChangeInput(e) {
         weight !== 0 ? products.setProductWeight(id, Number(e.target.value)) : ''

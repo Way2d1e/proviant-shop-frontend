@@ -1,20 +1,20 @@
 .fade:before {
+    z-index: 2;
     position: fixed;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
-    z-index: 2;
     content: '';
     background: #898989;
     opacity: 0.75;
 }
 
 .container {
+    z-index: 3;
     position: fixed;
     left: 25%;
     top: 25%;
-    z-index: 3;
     width: 720px;
     height: 400px;
     padding: 15px 30px 30px 30px;
