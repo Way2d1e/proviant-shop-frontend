@@ -13,6 +13,9 @@
 .container {
     z-index: 3;
     position: fixed;
+    left: 26%;
+    top: 10%;
+    position: fixed;
     left: 25%;
     top: 25%;
     width: 720px;
@@ -41,9 +44,6 @@
 
 .infoBuyer {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
 }
 
 .infoBuyer input {
@@ -52,6 +52,13 @@
     border: 1px solid #46B14B;
     border-radius: 10px;
     font: 400 16px/32px "Open Sans", sans-serif;
+}
+
+.formOrder{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .orderInfo {
@@ -97,6 +104,13 @@
     transition: .5s;
 }
 
+.blockApproveOrder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
 .wrapApproveOrder {
     display: flex;
     flex-direction: column;
@@ -128,15 +142,29 @@
     font: 700 36px/49px "Open Sans", sans-serif;
 }
 
+.orderTips{
+    margin-top: 15px;
+    font: 400 20px/24px "Open Sans", sans-serif;
+}
+
 .approveButton {
     align-self: flex-end;
     align-items: center;
-    width: 320px;
     height: 40px;
+    width: 320px;
     border: none;
     border-radius: 30px;
     color: #FFFFFF;
     font: 400 24px/32px "Open Sans", sans-serif;
     background: #46b14b;
     cursor: pointer;
+}
+
+.hidden{
+    display: none;
+}
+
+.loaderTip{
+    margin-bottom: 20px;
+    font: 500 24px/30px "Open Sans", sans-serif;
 }

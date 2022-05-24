@@ -1,7 +1,7 @@
 export const productsService = {
     _api: 'http://26.85.60.200:8080/',
 
-    async getResource(url, options)  {
+    async getResource(url, options) {
         const res = await fetch(`${this._api}${url}`, options)
         if (!res.ok) {
             throw new Error(`Could not fetch ${url}, received ${res.status}`)
@@ -9,7 +9,7 @@ export const productsService = {
         return res.json()
     },
 
-    async getCategories()  {
+    async getCategories() {
         return await this.getResource('category')
     },
 
@@ -17,10 +17,13 @@ export const productsService = {
         return await this.getResource(`category/${category}/product`)
     },
 
-    async addProductToCard(product) {
+     addProductToCard(product) {
         if (localStorage.getItem('products')) {
             const products = JSON.parse(localStorage.getItem('products'))
-            localStorage.setItem('products', JSON.stringify([...products, product]))
+            localStorage.setItem(
+                'products',
+                JSON.stringify([...products, product])
+            )
         } else {
             localStorage.setItem('products', JSON.stringify([product]))
         }
@@ -35,12 +38,22 @@ export const productsService = {
     },
 
     async setCartProduct() {
-        const products = await fetch('http://localhost:3001/products').then((res) => res.json())
+        const products = await fetch('http://localhost:3001/products').then(
+            (res) => res.json()
+        )
         await window.localStorage.setItem('products', JSON.stringify(products))
     },
 
     getCartProducts() {
         return JSON.parse(window.localStorage.getItem('products'))
+    },
+
+    createItemOrders() {
+        return JSON.parse(localStorage.getItem('products')).map(
+            ({ id: productId, weight }) => {
+                return { productId, weight }
+            }
+        )
     },
 
     async createOrder(order) {

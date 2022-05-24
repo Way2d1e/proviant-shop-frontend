@@ -42,6 +42,12 @@
     transition: .5s;
 }
 
+.selectFilterItem img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
 .selectFilterItem:nth-child(odd) {
     background: #D3EAC3;
 }
@@ -88,7 +94,7 @@
 }
 
 .contentExitActive {
-    height: 200px;
+    height: 150px;
     margin-top: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 4px #898989;
@@ -110,13 +116,13 @@
     }
 
     to {
-        height: 200px;
+        height: 150px;
     }
 }
 
 @keyframes smoothnessListExit {
     from {
-        height: 200px;
+        height: 150px;
     }
 
     to {

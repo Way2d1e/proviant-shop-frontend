@@ -2,7 +2,9 @@ import React, {useRef} from 'react'
 import Minus from '../../assets/images/minus.svg'
 import Plus from '../../assets/images/plus.svg'
 import productCart from '../../assets/images/white-cart.svg'
-import {productsService} from "../../services/productsService";
+import { productsService } from "../../services/productsService";
+import { ToastContainer, toast } from "react-toastify";
+import { injectStyle } from "react-toastify/dist/inject-style";
 
 import styles from './CategoryItem.module.css'
 import products from "../../store/products";
@@ -10,7 +12,13 @@ import products from "../../store/products";
 export const CategoryItem = (props) => {
     const {id, img, title, price, weight, currentPrice, defaultValue, typeMeasuring} = props
 
-    const weightRef = useRef(weight)
+    if (typeof window !== "undefined") {
+        injectStyle();
+    }
+
+    const weightRef = useRef(0)
+
+    let priceProduct = (+weightRef.current.value)
 
     const decrementCounter = () => {
         if (typeMeasuring === 'кг' && weightRef.current.value >= 0.1) {
@@ -23,7 +31,6 @@ export const CategoryItem = (props) => {
             }
         }
     }
-
 
 const incrementCounter = () => {
     typeMeasuring === 'кг' ?
@@ -39,7 +46,29 @@ const onInput = (e) => {
 function onChangeInput(e) {
     weight !== 0 ? products.setProductWeight(id, Number(e.target.value)) : ''
 }
+    const incrementCounter = () => {
+        weightRef.current.value = (+weightRef.current.value + 1).toFixed(0)
+    }
 
+    let interval
+
+    return (
+        <div className={styles.categoryItem}>
+            <ToastContainer
+                position="bottom-left"
+            />
+
+            <div className={styles.productImageBack}><img className={styles.productImage} src={img} /></div>
+            <div className={styles.productName}>{title}</div>
+            <div className={styles.productPrice}>{price} ₽ / {typeMeasuring}</div>
+            <div className={styles.aboutWeight}>
+                <button onClick={() => decrementCounter()}>
+                    <img src={Minus} alt=""/>
+                </button>
+                <input
+                    className={styles.productWeight}
+                    type="number"
+                    ref={weightRef}
 return (
     <div className={styles.categoryItem}>
         <img className={styles.productImage} src={img}/>
@@ -82,6 +111,25 @@ return (
                     })
                 }
             >
+                        onMouseUp={() => clearInterval(interval)}
+                >
+                    <img src={Plus} alt=""/>
+                </button>
+            </div>
+            <div className={styles.aboutPrice}>
+                <button
+                    onClick={() =>
+                        productsService.addProductToCard({
+                            id,
+                            img,
+                            title,
+                            price,
+                            weight: weightRef.current.value,
+                            typeMeasuring,
+                            currentPrice,
+                        },toast("Вы добавили товар в корзину"))
+                    }
+                >
                     <span>
                          В корзину
                     </span>

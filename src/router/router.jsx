@@ -6,6 +6,7 @@ import {CartPage} from "../pages/CartPage"
 import {CategoryPage} from "../pages/CategoryPage"
 import {AdminPage} from "../pages/AdminPage"
 import {ReactComponent as Cart} from '../assets/images/shopCart.svg'
+import { ItemsCartCount } from '../components/ItemsCartCount'
 
 
 export const routes = [{
@@ -15,7 +16,7 @@ export const routes = [{
 }, {
     path: "/contacts", element: <ContactsPage/>, title: "Контакты",
 }, {
-    path: "/cart", element: <CartPage/>, title: <Cart/>,
+    path: "/cart", element: <CartPage/>, title: <div style={{display:"flex", cursor:"pointer"}}><Cart/> <ItemsCartCount/></div>,
 }, {
     path: "/categories/:id", element: <CategoryPage/>, title: "",
 }, {

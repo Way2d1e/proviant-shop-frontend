@@ -14,8 +14,17 @@
     background: #D3EAC3;
 }
 
+.imgWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 125px;
+    width: 200px;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
 .imgExample {
-    width: 150px;
     height: 125px;
     border-radius: 10px;
 }
