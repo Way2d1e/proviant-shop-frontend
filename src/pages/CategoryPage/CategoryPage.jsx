@@ -6,7 +6,10 @@ import {observer} from 'mobx-react-lite'
 import {Link, useLocation, useParams} from 'react-router-dom'
 import {CategoryItem} from '../../components/CategoryItem'
 import Arrow from '../../assets/images/arrow.svg'
-import {productsService} from "../../services/productsService";
+import { productsService } from "../../services/productsService";
+import Descending from '../../assets/images/categories/descending.svg'
+import Increase from '../../assets/images/categories/increase.svg'
+import Popular from '../../assets/images/categories/popular.svg'
 
 import styles from './CategoryPage.module.css'
 
@@ -14,10 +17,9 @@ import styles from './CategoryPage.module.css'
 export const CategoryPage = observer(() => {
 
     const filterItems = [
-        {id: 0, title: "По популярности"},
-        {id: 1, title: "По алфавиту"},
-        {id: 2, title: "По убыванию цены"},
-        {id: 3, title: "По возрастанию цены"},
+        {id: 0, title: "По популярности", img: Popular},
+        {id: 1, title: "По убыванию цены", img: Descending},
+        {id: 2, title: "По возрастанию цены", img: Increase},
     ]
 
     const [isActive, setActive] = useState(false);
@@ -33,7 +35,7 @@ export const CategoryPage = observer(() => {
     const createFilterItem = (items) => {
         return (items.map((item) => (
             <div onClick={() => closeFilterItem(item.title)} className={styles.selectFilterItem}
-                 key={item.id}>{item.title}</div>)
+                 key={item.id}><img src={item.img} alt=""/>{item.title}</div>)
         ))
     }
 
