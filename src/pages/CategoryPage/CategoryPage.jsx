@@ -53,13 +53,14 @@ export const CategoryPage = observer(() => {
         return (
             <div className={styles.categoryItemsWrapper}>
                 {categoryItems.map((
-                    {id, imagePath: img, name: title, price, typeMeasuring}
+                    {id, imagePath: img, name: title, price, defaultValue, typeMeasuring}
                 ) => (
                     <CategoryItem
                         id={id}
                         img={img}
                         title={title}
                         price={price}
+                        defaultValue={defaultValue}
                         typeMeasuring={typeMeasuring}
                         key={id}
                     />
