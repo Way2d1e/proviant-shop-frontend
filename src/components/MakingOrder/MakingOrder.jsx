@@ -81,7 +81,9 @@ export const MakingOrder = (props) => {
                                 <input
                                     placeholder="81234567890"
                                     name="phoneNumber"
-                                    type="phone"
+                                    type="text"
+                                    maxLength={9}
+                                    pattern="[+-]?\d+(?:[.,]\d+)?"
                                 />
                             </form>
                         </div>
@@ -167,7 +169,9 @@ export const MakingOrder = (props) => {
                         </div>
                     ) : (
                         <div>
-                            <div className={styles.loaderTip}>Оформляем заказ, ожидайте...</div>
+                            <div className={styles.loaderTip}>
+                                Оформляем заказ, ожидайте...
+                            </div>
                             <Loader />
                         </div>
                     )}
