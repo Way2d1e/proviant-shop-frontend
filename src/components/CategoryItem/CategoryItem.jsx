@@ -5,92 +5,89 @@ import productCart from '../../assets/images/white-cart.svg'
 import {productsService} from "../../services/productsService";
 
 import styles from './CategoryItem.module.css'
+import products from "../../store/products";
 
 export const CategoryItem = (props) => {
-    const {id, img, title, price, currentPrice, typeMeasuring} = props
+    const {id, img, title, price, weight, currentPrice, defaultValue, typeMeasuring} = props
 
-    const weightRef = useRef(0)
-
-    let priceProduct = (+weightRef.current.value)
-
-    // function addProductToCart() {
-    //     if (typeMeasuring === 'шт') {
-    //         currentPrice = price * (+weightRef.current.value).toFixed(0)
-    //     } else {
-    //         currentPrice = price * +weightRef
-    //     }
-    //
-    // }
+    const weightRef = useRef(weight)
 
     const decrementCounter = () => {
-        if (weightRef.current.value >= 0.5) {
-            weightRef.current.value = (+weightRef.current.value - 1).toFixed(0)
+        if (typeMeasuring === 'кг' && weightRef.current.value >= 0.1) {
+            weightRef.current.value = (+weightRef.current.value - 0.5).toFixed(1)
         } else {
-            return weightRef.current.value
+            if (weightRef.current.value >= 1) {
+                weightRef.current.value = (+weightRef.current.value - 1).toFixed(1)
+            } else {
+                return weightRef.current.value
+            }
         }
     }
 
 
+const incrementCounter = () => {
+    typeMeasuring === 'кг' ?
+        weightRef.current.value = (+weightRef.current.value + 0.5).toFixed(1)
+    :
+        weightRef.current.value = (+weightRef.current.value + 1).toFixed(1)
+}
 
-    const incrementCounter = () => {
-        weightRef.current.value = (+weightRef.current.value + 1).toFixed(0)
-    }
+const onInput = (e) => {
+    weight === 0 ? products.setProductWeight(id, '') : products.setProductWeight(id, Number(e.target.value))
+}
 
-    let interval
+function onChangeInput(e) {
+    weight !== 0 ? products.setProductWeight(id, Number(e.target.value)) : ''
+}
 
-    return (
-        <div className={styles.categoryItem}>
-            <img className={styles.productImage} src={img} />
-            <div className={styles.productName}>{title}</div>
-            <div className={styles.productPrice}>{price} ₽ / {typeMeasuring}</div>
-            <div className={styles.aboutWeight}>
-                <button onClick={() => decrementCounter()}>
-                    <img src={Minus} alt=""/>
-                </button>
-                <input
-                    className={styles.productWeight}
-                    type="number"
-                    ref={weightRef}
-                    onChange={() => {
-                        // weightRef.current.value < 0
-                        //     ? (weightRef.current.value = 0)
-                        //     : ''
-
-                    }}
-                    onInput={() => {
-                        if( (weightRef.current.value.charAt(0) === 0) && (weightRef.current.value.charAt(1) !== '.')) {
-                            weightRef.current.value = 0
-                        }
-                    }}
-                />
-                <button onClick={() => incrementCounter()} onMouseDown={() => {
-                    interval = setInterval(() => incrementCounter(), 200)
+return (
+    <div className={styles.categoryItem}>
+        <img className={styles.productImage} src={img}/>
+        <div className={styles.productName}>{title}</div>
+        <div className={styles.productPrice}>{price} ₽ / {typeMeasuring}</div>
+        <div className={styles.aboutWeight}>
+            <button onClick={() => decrementCounter()}>
+                <img src={Minus} alt=""/>
+            </button>
+            <input
+                className={styles.productWeight}
+                type="number"
+                ref={weightRef}
+                value={weight}
+                defaultValue={defaultValue}
+                onInput={(e) => {
+                    onInput(e)
                 }}
-                        onMouseUp={() => clearInterval(interval)}
-                >
-                    <img src={Plus} alt=""/>
-                </button>
-            </div>
-            <div className={styles.aboutPrice}>
-                <button
-                    onClick={() =>
-                        productsService.addProductToCard({
-                            id,
-                            img,
-                            title,
-                            price,
-                            weight: weightRef.current.value,
-                            typeMeasuring,
-                            currentPrice,
-                        })
-                    }
-                >
+                onChange={(e) => {
+                    onChangeInput(e)
+                }}
+            />
+            <button onClick={() => incrementCounter()}
+            >
+                <img src={Plus} alt=""/>
+            </button>
+        </div>
+        <div className={styles.aboutPrice}>
+            <button
+                onClick={() =>
+                    products.addProduct({
+                        id,
+                        img,
+                        title,
+                        price,
+                        defaultValue,
+                        weight: weightRef.current.value,
+                        typeMeasuring,
+                        currentPrice,
+                    })
+                }
+            >
                     <span>
                          В корзину
                     </span>
-                    <img src={productCart} alt="cart"/>
-                </button>
-            </div>
+                <img src={productCart} alt="cart"/>
+            </button>
         </div>
-    )
+    </div>
+)
 }

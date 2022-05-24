@@ -11,9 +11,9 @@
 }
 
 .container {
-    position: absolute;
-    left: 26%;
-    top: 10%;
+    position: fixed;
+    left: 25%;
+    top: 25%;
     z-index: 3;
     width: 720px;
     height: 400px;
@@ -81,6 +81,7 @@
     color: #ffffff;
     background: #46B14B;
     cursor: pointer;
+    transition: .5s;
 }
 
 .btnCancel {
@@ -93,6 +94,7 @@
     font-weight: bold;
     background: #ffffff;
     cursor: pointer;
+    transition: .5s;
 }
 
 .wrapApproveOrder {

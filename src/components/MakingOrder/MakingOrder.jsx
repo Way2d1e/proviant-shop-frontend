@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styles from './MakingOrder.module.css'
 import postOrder from '../../db/post.json'
-import axios from "axios";
 
 export const MakingOrder = (props) => {
     const { closeModal } = props

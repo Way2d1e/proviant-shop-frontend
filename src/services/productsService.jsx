@@ -26,12 +26,20 @@ export const productsService = {
         }
     },
 
+    removeProductFromCard(id) {
+        const newProducts = JSON.parse(localStorage.getItem('products')).filter((product) => {
+            return product.id !== id ? product: ''
+        })
+        console.log(newProducts)
+        localStorage.setItem('products', JSON.stringify(newProducts))
+    },
+
     async setCartProduct() {
         const products = await fetch('http://localhost:3001/products').then((res) => res.json())
         await window.localStorage.setItem('products', JSON.stringify(products))
     },
 
-    async getCartProducts() {
+    getCartProducts() {
         return JSON.parse(window.localStorage.getItem('products'))
     },
 

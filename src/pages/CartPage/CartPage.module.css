@@ -108,6 +108,7 @@ input::placeholder {
     font: 700 16px/22px "Open Sans", sans-serif;
     cursor: pointer;
     background: #46B14B;
+    transition: .5s;
 }
 
 .line {

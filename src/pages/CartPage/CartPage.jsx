@@ -3,10 +3,12 @@ import {productsService} from '../../services/productsService'
 import {CartItem} from '../../components/CartItem'
 import {Loader} from '../../components/UI/Loader'
 import {MakingOrder} from "../../components/MakingOrder";
+import products from "../../store/products";
 
 import styles from './CartPage.module.css'
+import {observer} from "mobx-react-lite";
 
-export const CartPage = () => {
+export const CartPage = observer(() => {
 
     function makeOrder() {
         setIsActive(!isActive)
@@ -14,41 +16,24 @@ export const CartPage = () => {
 
     const [isActive, setIsActive] = useState(false)
     const [cartProducts, setCartProducts] = useState([])
-    const [finalPrice, setFinalPrice] = useState()
-
-    // {
-    //     const products = JSON.parse(localStorage.getItem('products'))
-    //     const orderItems = products.map(({id, weight, name, price, measuringType}) => {
-    //         return { id, name, weight, price, measuringType }
-    //     })
-    //
-    //     console.log(orders)
-    //
-    //     fetch(url, {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-type": "application/json"
-    //         },
-    //         body: JSON.stringify(orders)
-    //     })
-    // }
-
     useEffect(() => {
-        productsService.getCartProducts().then((products) => {
-            setCartProducts(products || [])
-        })
-    }, [])
+        const cartItems = products.getProducts()
+        setCartProducts(cartItems)
+    }, [products.products])
 
     const deleteItem = (e, id) => {
-        const products = cartProducts.filter((item, index) => {
-            console.log(id)
-            return item.id !== id
+        const products = cartProducts.filter((product, index) => {
+            return product.id !== id
         })
-        window.localStorage.setItem('products', JSON.stringify(products))
+        setCartProducts(products)
     }
 
-    let result = cartProducts.reduce(
-        (acc, product) => acc + product.price * product.weight, 0
+    let finalPrice = cartProducts.reduce(
+        (priceProduct, product) => priceProduct + product.price * product.weight, 0,
+    )
+
+    let finalWeight = cartProducts.reduce(
+        (priceProduct, product) => priceProduct + +product.weight, 0
     )
 
     return (
@@ -67,7 +52,6 @@ export const CartPage = () => {
                                 currentPrice={product.currentPrice}
                                 typeMeasuring={product.typeMeasuring}
                                 key={product.id}
-                                deleteItem={deleteItem}
                             />
                         ))
                     ) : (
@@ -77,17 +61,17 @@ export const CartPage = () => {
                 <div className={styles.finalCheck}>
                     <div className={styles.containerSum}>
                         <div className={styles.intermediate}>Сумма заказа:</div>
-                        <div className={styles.intermediate}>{result} р</div>
+                        <div className={styles.intermediate}>{finalPrice} р</div>
                     </div>
                     <div className={styles.containerSum}>
                         <div className={styles.intermediate}>Вес заказа:</div>
-                        <div className={styles.intermediate}>0.3кг</div>
+                        <div className={styles.intermediate}>{finalWeight} кг</div>
                     </div>
                     <hr className={styles.line}/>
                     <div className={styles.containerSum}>
                         <div className={styles.total}>Итого к оплате</div>
                         <div className={styles.total}>
-                            {result} ₽
+                            {finalPrice} ₽
                         </div>
                     </div>
                     <button className={styles.btnMakeOrder} onClick={() => makeOrder()}>
@@ -98,4 +82,4 @@ export const CartPage = () => {
             {isActive ? <MakingOrder  closeModal={setIsActive}/> : null}
         </div>
     )
-}
+})
