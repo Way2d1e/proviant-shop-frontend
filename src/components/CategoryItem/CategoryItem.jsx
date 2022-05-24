@@ -2,25 +2,22 @@ import React, {useRef} from 'react'
 import Minus from '../../assets/images/minus.svg'
 import Plus from '../../assets/images/plus.svg'
 import productCart from '../../assets/images/white-cart.svg'
-import {productsService} from "../../services/productsService";
+import { productsService } from "../../services/productsService";
+import { ToastContainer, toast } from "react-toastify";
+import { injectStyle } from "react-toastify/dist/inject-style";
 
 import styles from './CategoryItem.module.css'
 
 export const CategoryItem = (props) => {
     const {id, img, title, price, currentPrice, typeMeasuring} = props
 
+    if (typeof window !== "undefined") {
+        injectStyle();
+    }
+
     const weightRef = useRef(0)
 
     let priceProduct = (+weightRef.current.value)
-
-    // function addProductToCart() {
-    //     if (typeMeasuring === 'шт') {
-    //         currentPrice = price * (+weightRef.current.value).toFixed(0)
-    //     } else {
-    //         currentPrice = price * +weightRef
-    //     }
-    //
-    // }
 
     const decrementCounter = () => {
         if (weightRef.current.value >= 0.5) {
@@ -30,8 +27,6 @@ export const CategoryItem = (props) => {
         }
     }
 
-
-
     const incrementCounter = () => {
         weightRef.current.value = (+weightRef.current.value + 1).toFixed(0)
     }
@@ -40,6 +35,10 @@ export const CategoryItem = (props) => {
 
     return (
         <div className={styles.categoryItem}>
+            <ToastContainer
+                position="bottom-left"
+            />
+
             <img className={styles.productImage} src={img} />
             <div className={styles.productName}>{title}</div>
             <div className={styles.productPrice}>{price} ₽ / {typeMeasuring}</div>
@@ -82,7 +81,7 @@ export const CategoryItem = (props) => {
                             weight: weightRef.current.value,
                             typeMeasuring,
                             currentPrice,
-                        })
+                        },toast("Вы добавили товар в корзину"))
                     }
                 >
                     <span>
