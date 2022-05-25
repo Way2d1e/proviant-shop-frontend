@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { productsService } from '../../services/productsService'
-import { Loader } from '../UI/Loader'
+import { SuccessfulOrder } from '../SuccessfulOrder'
+import inputInfo from './inputs.json'
 
 import styles from './MakingOrder.module.css'
 
@@ -11,28 +12,43 @@ export const MakingOrder = (props) => {
 
     const [orderNumber, setOrderNumber] = useState(null)
 
-    const createOrder = (e) => {
-        e.preventDefault()
-        setModalOrder(!modalOrder)
-        const orderItems = productsService.createItemOrders()
-        const formData = new FormData(orderRef.current)
-        let client = {}
-        formData.forEach((item, index) => {
-            client = { ...client, [index]: item }
-        })
-        console.log(client)
-
-        productsService
-            .createOrder({
-                orderItems,
-                client,
-            })
-            .then((res) => {
-                setOrderNumber(res)
-            })
-    }
+    const [focused, setFocused] = useState(false)
 
     const [modalOrder, setModalOrder] = useState(true)
+
+    const [client, setClients] = useState({
+        surname: '',
+        name: '',
+        middleName: '',
+        email: '',
+        phoneNumber: '',
+    })
+
+    const onChange = (e) => {
+        setClients({ ...client, [e.target.name]: e.target.value })
+    }
+
+    const createOrder = (e) => {
+        e.preventDefault()
+        let invalid = document.querySelectorAll('input:invalid').length
+        if (invalid === 0) {
+            setModalOrder(!modalOrder)
+            const orderItems = productsService.createItemOrders()
+
+            productsService
+                .createOrder({
+                    orderItems,
+                    client,
+                })
+                .then((res) => {
+                    setOrderNumber(res)
+                })
+        }
+    }
+
+    const handleFocus = (e) => {
+        setFocused(true)
+    }
 
     return (
         <div
@@ -58,45 +74,33 @@ export const MakingOrder = (props) => {
                     <div className={styles.wrapOrder}>
                         <div className={styles.infoBuyer}>
                             <form ref={orderRef} className={styles.formOrder}>
-                                <input
-                                    placeholder="Иванов"
-                                    type="text"
-                                    name="surname"
-                                    maxLength={20}
-                                />
-                                <input
-                                    placeholder="Иван"
-                                    name="name"
-                                    type="text"
-                                    maxLength={20}
-                                />
-                                <input
-                                    placeholder="Иванович"
-                                    name="middleName"
-                                    type="text"
-                                    maxLength={20}
-                                />
-                                <input
-                                    placeholder="ivan@mail.ru"
-                                    name="email"
-                                    type="email"
-                                />
-                                <input
-                                    placeholder="81234567890"
-                                    name="phoneNumber"
-                                    type="text"
-                                    maxLength={12}
-                                    pattern="[0-9]"
-                                />
+                                {inputInfo.map((input) => (
+                                    <div key={input.id}>
+                                        <input
+                                            name={input.name}
+                                            type={input.type}
+                                            placeholder={input.placeholder}
+                                            pattern={input.pattern}
+                                            required={input.required}
+                                            value={client[input.name]}
+                                            onChange={onChange}
+                                            onBlur={handleFocus}
+                                            focused={focused.toString()}
+                                        />
+                                        <span className={styles.errorMessage}>
+                                            {input.errorMessage}
+                                        </span>
+                                    </div>
+                                ))}
                             </form>
                         </div>
                         <div className={styles.orderInfo}>
                             <div className={styles.textOrderInfo}>
                                 При нажатии на кнопку
-                                <strong> Подтвердить заказ </strong>
+                                <strong>Подтвердить заказ</strong>
                                 на указанную Вами почту прийдет чек.В течении 24
                                 часов нужно будет прийти в магазин с этим чеком,
-                                оплатить и забрать заказ.Через 24 часа заказ
+                                оплатить и забрать заказ. Через 24 часа заказ
                                 считается недействительным. Оплата производится
                                 любым удобным для Вас способом.
                             </div>
@@ -124,53 +128,22 @@ export const MakingOrder = (props) => {
                         modalOrder ? styles.hidden : styles.blockApproveOrder
                     }
                 >
-                    {orderNumber ? (
-                        <div
-                            className={
-                                modalOrder
-                                    ? styles.hidden
-                                    : styles.wrapApproveOrder
-                            }
+                    <SuccessfulOrder
+                        orderNumber={orderNumber}
+                        modalOrder={modalOrder}
+                    />
+                    <div className={
+                             modalOrder ? styles.hidden : null
+                         }>
+                        <button
+                            onClick={() => {
+                                closeModal(false)
+                            }}
+                            className={styles.approveButtonNone}
                         >
-                            <div>
-                                <div className={styles.approveTitle}>
-                                    Спасибо за заказ
-                                </div>
-                                <div className={styles.approveBody}>
-                                    <div className={styles.approveOrder}>
-                                        Номер заказа
-                                    </div>
-                                    <div className={styles.approveOrderNumber}>
-                                        #{orderNumber}
-                                    </div>
-                                    <div className={styles.orderTips}>
-                                        Ожидайте сообщения на почте и предъявите
-                                        его продавцу.
-                                    </div>
-                                    <div className={styles.orderTips}>
-                                        Вскоре с вами свяжется наш оператор
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <button
-                                    onClick={() => {
-                                        closeModal(false)
-                                    }}
-                                    className={styles.approveButton}
-                                >
-                                    Ок
-                                </button>
-                            </div>
-                        </div>
-                    ) : (
-                        <div>
-                            <div className={styles.loaderTip}>
-                                Оформляем заказ, ожидайте...
-                            </div>
-                            <Loader />
-                        </div>
-                    )}
+                            Ок
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
