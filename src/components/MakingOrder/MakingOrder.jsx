@@ -93,14 +93,7 @@ export const MakingOrder = (props) => {
                         <div className={styles.orderInfo}>
                             <div className={styles.textOrderInfo}>
                                 При нажатии на кнопку
-                                <span
-                                    style={{
-                                        color: '#46B14B',
-                                        textDecoration: 'underline',
-                                    }}
-                                >
-                                    Подтвердить заказ
-                                </span>
+                                <strong> Подтвердить заказ </strong>
                                 на указанную Вами почту прийдет чек.В течении 24
                                 часов нужно будет прийти в магазин с этим чеком,
                                 оплатить и забрать заказ.Через 24 часа заказ
