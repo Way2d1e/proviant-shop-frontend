@@ -24,7 +24,7 @@ export const Footer = () => {
                     <a href="mailto:shop@proviant.ru">
                         <span>shop@proviant.ru</span>
                     </a>
-                    <a href="https://wa.me/74956409640?text=Здравствуйте%2C+у+меня+есть+вопрос">
+                    <a href="https://api.whatsapp.com/send?phone=74956409640text=">
                         <img src={WhatsApp} alt="" />
                     </a>
                 </div>

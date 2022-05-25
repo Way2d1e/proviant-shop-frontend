@@ -1,10 +1,10 @@
 .categoryItem {
     display: flex;
     flex-direction: column;
-    /*width: 250px;*/
     padding: 10px;
     border-radius: 10px;
-    background: #D3EAC3;
+    box-shadow: 0 0 7px #46B14B;
+
 }
 
 .productImageBack{
@@ -18,17 +18,17 @@
 }
 
 .productImage {
-    z-index: 10;
     height: 150px;
 }
 
 .productName {
-    font: 400 25px/35px "Open Sans",sans-serif;
+    height: 75px;
+    font: 400 24px/33px "Open Sans",sans-serif;
 }
 
 .productPrice {
     color: #898989;
-    font: 700 24px/33px "Open Sans",sans-serif;
+    font: 600 24px/33px "Open Sans",sans-serif;
 }
 
 .aboutWeight {

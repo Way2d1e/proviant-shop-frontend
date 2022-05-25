@@ -26,10 +26,11 @@ export const CatalogPage = observer(() => {
                                 className={styles.catalogCategory}
                                 onClick={() => main.selectCategory(id, title)}
                             >
-                                <img src={img} alt="" draggable={false} />
+
                                 <div className={styles.catalogCategoryTitle}>
                                     <p>{title}</p>
                                 </div>
+                                <img src={img} alt="" draggable={false} />
                             </div>
                         </Link>
                     )

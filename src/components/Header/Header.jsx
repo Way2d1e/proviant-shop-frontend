@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from '../../assets/images/Logo.svg'
 import Search from '../../assets/images/search.svg'
-import {BrowserRouter as Router, Link, NavLink} from 'react-router-dom'
+import { Link, NavLink} from 'react-router-dom'
 import { routes } from '../../router/router'
 
 import styles from './Header.module.css'
@@ -10,7 +10,7 @@ export const Header = () => {
     return (
         <div className={styles.container}>
             <Link to="/">
-                <img className={styles.logo} src={Logo} draggable={false} />
+                <img className={styles.logo} src={Logo} draggable={false} alt="logo" />
             </Link>
             <div className={styles.navBar}>
                 <div className={styles.navBarContent}>
