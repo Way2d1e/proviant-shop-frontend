@@ -62,16 +62,19 @@ export const MakingOrder = (props) => {
                                     placeholder="Иванов"
                                     type="text"
                                     name="surname"
+                                    maxLength={20}
                                 />
                                 <input
                                     placeholder="Иван"
                                     name="name"
                                     type="text"
+                                    maxLength={20}
                                 />
                                 <input
                                     placeholder="Иванович"
                                     name="middleName"
                                     type="text"
+                                    maxLength={20}
                                 />
                                 <input
                                     placeholder="ivan@mail.ru"
@@ -82,8 +85,8 @@ export const MakingOrder = (props) => {
                                     placeholder="81234567890"
                                     name="phoneNumber"
                                     type="text"
-                                    maxLength={9}
-                                    pattern="[+-]?\d+(?:[.,]\d+)?"
+                                    maxLength={12}
+                                    pattern="[0-9]"
                                 />
                             </form>
                         </div>
