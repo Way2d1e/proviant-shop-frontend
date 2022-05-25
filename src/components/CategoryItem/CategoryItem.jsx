@@ -110,9 +110,8 @@ export const CategoryItem = (props) => {
                             weight: weightRef.current.value,
                             typeMeasuring,
                             currentPrice,
-                        },  toast("Вы добавили продукт в корзину"))
+                        },  toast("Товар успешно добавлен в корзину!"))
                     }
-                    onMouseUp={() => clearInterval(interval)}
                 >
                     <span>В корзину</span>
                     <img src={productCart} alt="cart" />

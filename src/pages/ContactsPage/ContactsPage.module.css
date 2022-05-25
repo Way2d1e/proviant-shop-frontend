@@ -67,6 +67,10 @@ a{
     padding-left: 10px;
 }
 
+.feedback img {
+    width: 45px;
+    height: 45px;
+}
 
 .map {
     display: flex;
