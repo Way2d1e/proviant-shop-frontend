@@ -15,7 +15,6 @@
     position: fixed;
     left: 26%;
     top: 10%;
-    position: fixed;
     left: 25%;
     top: 25%;
     width: 720px;
@@ -59,6 +58,28 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.formOrder input {
+    width: 100%;
+}
+
+.errorMessage {
+    display: none;
+    color: red;
+    font: 400 14px/16px "Open Sans", sans-serif;
+}
+
+input:invalid[focused = "true"] {
+border: red 1px solid;
+}
+
+input:invalid[focused = "true"]:focus {
+    border: none;
+}
+
+input:invalid[focused = "true"] ~ span{
+    display: block;
 }
 
 .orderInfo {
@@ -106,48 +127,18 @@
 
 .blockApproveOrder{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
 }
 
-.wrapApproveOrder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    text-align: center;
-}
-
-.approveTitle {
-    color: #46B14B;
-    font: 700 40px/54px "Open Sans", sans-serif;
-}
-
-.approveBody {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.approveOrder {
-    margin-top: 20px;
-    font: 400 36px/49px "Open Sans", sans-serif;
-}
-
-.approveOrderNumber{
-    color: #46b14b;
-    font: 700 36px/49px "Open Sans", sans-serif;
-}
-
-.orderTips{
-    margin-top: 15px;
-    font: 400 20px/24px "Open Sans", sans-serif;
-}
-
-.approveButton {
+.approveButtonNone {
+    z-index: 5;
+    position: absolute;
+    bottom: 50px;
+    right: 200px;
+    opacity: 0;
     align-self: flex-end;
     align-items: center;
     height: 40px;
@@ -157,14 +148,8 @@
     color: #FFFFFF;
     font: 400 24px/32px "Open Sans", sans-serif;
     background: #46b14b;
-    cursor: pointer;
 }
 
 .hidden{
     display: none;
-}
-
-.loaderTip{
-    margin-bottom: 20px;
-    font: 500 24px/30px "Open Sans", sans-serif;
 }

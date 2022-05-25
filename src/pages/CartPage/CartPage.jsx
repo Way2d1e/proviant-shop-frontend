@@ -80,6 +80,7 @@ export const CartPage = observer(() => {
                 </div>
             </div>
             {isActive ? <MakingOrder  closeModal={setIsActive}/> : null}
+
         </div>
     )
 })
