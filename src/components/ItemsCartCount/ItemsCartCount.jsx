@@ -1,9 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styles from "./ItemsCartCount.module.css"
+import {observer} from "mobx-react-lite";
+import products from "../../store/products";
 
-export const ItemsCartCount = () => {
-    const [itemsCart, setItemsCart] = useState(0)
+export const ItemsCartCount = observer(() => {
 
-    return <div className={styles.container}>{itemsCart}</div>
-}
+    const itemsCart = products.products.length
+
+    return (
+        <div>
+            {itemsCart !== 0 && <div className={styles.container}>{itemsCart}</div> }
+        </div>
+    )
+})
 
