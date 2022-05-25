@@ -69,7 +69,6 @@ export const CategoryItem = (props) => {
 
     return (
         <div className={styles.categoryItem}>
-            <ToastContainer position="bottom-left" />
             <div className={styles.productImageBack}>
                 <img className={styles.productImage} src={img} />
             </div>
@@ -100,7 +99,7 @@ export const CategoryItem = (props) => {
             </div>
             <div className={styles.aboutPrice}>
                 <button
-                    onClick={() =>
+                    onClick={() => {
                         products.addProduct({
                             id,
                             img,
@@ -110,8 +109,12 @@ export const CategoryItem = (props) => {
                             weight: weightRef.current.value,
                             typeMeasuring,
                             currentPrice,
-                        },  toast("Товар успешно добавлен в корзину!"))
-                    }
+                        })
+                        toast('Товар успешно добавлен в корзину!', {
+                            hideProgressBar: true,
+                            autoClose: 800
+                        })
+                    }}
                 >
                     <span>В корзину</span>
                     <img src={productCart} alt="cart" />
