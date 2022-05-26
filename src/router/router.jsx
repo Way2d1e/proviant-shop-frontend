@@ -4,7 +4,8 @@ import {CatalogPage} from "../pages/CatalogPage"
 import {ContactsPage} from "../pages/ContactsPage"
 import {CartPage} from "../pages/CartPage"
 import {CategoryPage} from "../pages/CategoryPage"
-import {AdminPage} from "../pages/AdminPage"
+import {AdminAuthPage} from "../pages/AdminPage/AdminAuthPage"
+import {AdminPanelPage} from "../pages/AdminPage/AdminPanelPage";
 import {ReactComponent as Cart} from '../assets/images/shopCart.svg'
 import { ItemsCartCount } from '../components/ItemsCartCount'
 
@@ -20,7 +21,9 @@ export const routes = [{
 }, {
     path: "/categories/:id", element: <CategoryPage/>, title: "",
 }, {
-    path: "/admin", element: <AdminPage/>, title: "",
+    path: "/admin-auth", element: <AdminAuthPage/>, title: "",
+}, {
+    path: "/admin-panel", element: <AdminPanelPage/>, title: "",
 }, {
     path: "*", element: <MainPage/>, title: '',
 }]
