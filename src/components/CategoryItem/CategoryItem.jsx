@@ -70,7 +70,7 @@ export const CategoryItem = (props) => {
     return (
         <div className={styles.categoryItem}>
             <div className={styles.productImageBack}>
-                <img className={styles.productImage} src={img} />
+                <img className={styles.productImage} src={img} draggable={false} />
             </div>
             <div className={styles.productName}>{title}</div>
             <div className={styles.productPrice}>
@@ -78,7 +78,7 @@ export const CategoryItem = (props) => {
             </div>
             <div className={styles.aboutWeight}>
                 <button onClick={() => decrementCounter()}>
-                    <img src={Minus} alt="" />
+                    <img src={Minus} alt="" draggable={false}/>
                 </button>
                 <input
                     className={styles.productWeight}
@@ -94,7 +94,7 @@ export const CategoryItem = (props) => {
                     }}
                 />
                 <button onClick={() => incrementCounter()}>
-                    <img src={Plus} alt="" />
+                    <img src={Plus} alt="" draggable={false}/>
                 </button>
             </div>
             <div className={styles.aboutPrice}>
@@ -117,7 +117,7 @@ export const CategoryItem = (props) => {
                     }}
                 >
                     <span>В корзину</span>
-                    <img src={productCart} alt="cart" />
+                    <img src={productCart} alt="cart" draggable={false}/>
                 </button>
             </div>
         </div>

@@ -40,7 +40,9 @@ export const CartItem = observer((props) => {
     return (
         <div className={styles.cartItem}>
             <div className={styles.productInfo}>
-                <img className={styles.imgExample} src={img} alt="" />
+                <div className={styles.imgWrap}>
+                    <img className={styles.imgExample} src={img} alt="" draggable={false} />
+                </div>
                 <div className={styles.cartDescription}>
                     <div className={styles.productName}>{title}</div>
                     <div className={styles.productCategory}></div>
