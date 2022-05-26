@@ -1,5 +1,5 @@
 export const productsService = {
-    _api: 'http://26.85.60.200:8080/',
+    _api: 'http://192.168.171.83:8080/',
 
     async getResource(url, options) {
         const res = await fetch(`${this._api}${url}`, options)

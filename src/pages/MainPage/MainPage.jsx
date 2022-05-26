@@ -3,13 +3,15 @@ import Ruble from '../../assets/images/ruble.svg'
 import Pshenichka from '../../assets/images/pshenichka.svg'
 import Service from '../../assets/images/service.svg'
 import Expirience from '../../assets/images/expirience.svg'
+import { Slider } from '../../components/Slider'
+import Slide1 from '../../assets/images/slider/ad1.png'
+import Slide2 from '../../assets/images/slider/ad2.png'
+import Slide3 from '../../assets/images/slider/ad3.png'
 
 import styles from './MainPage.module.css'
-import Slider from "../../components/Slider/Slider";
-import Slide from '../../assets/images/slider/ad.png'
 
 export const MainPage = () => {
-    const advanteges = [
+    const advantages = [
         {
             id: 0,
             title: 'Выгода',
@@ -36,10 +38,10 @@ export const MainPage = () => {
         },
     ]
 
-    const slides =[
-        {id: 1, img: Slide},
-        {id: 2, img: Slide},
-        {id: 3, img: Slide},
+    const slides = [
+        { id: 1, img: Slide1 },
+        { id: 2, img: Slide2 },
+        { id: 3, img: Slide3 },
     ]
 
     const createAdvantages = (advantages) => {
@@ -47,11 +49,10 @@ export const MainPage = () => {
             <div className={styles.advantageContainer}>
                 {advantages.map((item) => (
                     <div key={item.id} className={styles.itemAdvantege}>
-                        <img className={styles.itemImg} src={item.img} alt=""/>
+                        <img className={styles.itemImg} src={item.img} alt="" />
                         <p className={styles.itemTitle}>{item.title}</p>
                         <p className={styles.itemBody}>{item.body}</p>
                     </div>
-
                 ))}
             </div>
         )
@@ -60,11 +61,11 @@ export const MainPage = () => {
     return (
         <div className={styles.container}>
             <div className={styles.advantages}>
-                <Slider  slides={slides}/>
+                <Slider slides={slides} />
                 <p className={styles.advantagesTitle}>
                     Магазин вкусных продуктов
                 </p>
-                {createAdvantages(advanteges)}
+                {createAdvantages(advantages)}
             </div>
         </div>
     )
