@@ -1,0 +1,69 @@
+.admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.adminPanel {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 30px;
+    border: 2px solid #46B14B;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #46B14B;
+}
+
+.adminTitle {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font: 400 36px/54px "Open Sans", sans-serif;
+}
+
+.line {
+    margin: 10px 0;
+    border-top: 2px solid black;
+}
+
+.adminData {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.adminData p {
+    font: 400 20px/32px "Open Sans", sans-serif;
+}
+
+.adminData input {
+    width: 100%;
+    margin-top: 2px;
+    border: 1px solid #46B14B;
+    border-radius: 5px;
+    font: 600 18px/24px "MontserratRegular", sans-serif;
+    text-align: center;
+}
+
+.authBtn {
+    width: 100%;
+    height: 40px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font: 400 18px/30px "Open Sans",sans-serif;
+    background: #46B14B;
+    opacity: 0.8;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.authBtn:hover {
+    box-shadow: 0 0 15px #898989;
+    transform: scale(1.01);
+    opacity: 1;
+    transition: .5s;
+}
