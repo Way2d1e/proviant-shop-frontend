@@ -78,26 +78,26 @@ export const CategoryPage = observer(() => {
                     </Link>
                     / {main.getCategory().title}
                 </div>
-                <div className={styles.filters}>
-                    <div className={styles.activeFilter} onClick={() => setActive(!isActive)}>{activeFilter}<img
-                        className={isActive ? styles.arrowDefault : styles.arrowAnimation} src={Arrow} alt=""/></div>
-                    <CSSTransition
-                        in={isActive}
-                        classNames={
-                            {
-                                enterActive: styles.contentEnterActive,
-                                enterDone: styles.contentDoneEnter,
-                                exitDone: styles.contentDoneExit,
-                                exitActive: styles.contentExitActive,
-                            }
-                        }
-                        timeout={0}
-                    >
-                        <div className={isActive ? '' : styles.listFilter}>
-                            {createFilterItem(filterItems)}
-                        </div>
-                    </CSSTransition>
-                </div>
+                {/*<div className={styles.filters}>*/}
+                {/*    <div className={styles.activeFilter} onClick={() => setActive(!isActive)}>{activeFilter}<img*/}
+                {/*        className={isActive ? styles.arrowDefault : styles.arrowAnimation} src={Arrow} alt=""/></div>*/}
+                {/*    <CSSTransition*/}
+                {/*        in={isActive}*/}
+                {/*        classNames={*/}
+                {/*            {*/}
+                {/*                enterActive: styles.contentEnterActive,*/}
+                {/*                enterDone: styles.contentDoneEnter,*/}
+                {/*                exitDone: styles.contentDoneExit,*/}
+                {/*                exitActive: styles.contentExitActive,*/}
+                {/*            }*/}
+                {/*        }*/}
+                {/*        timeout={0}*/}
+                {/*    >*/}
+                {/*        <div className={isActive ? '' : styles.listFilter}>*/}
+                {/*            {createFilterItem(filterItems)}*/}
+                {/*        </div>*/}
+                {/*    </CSSTransition>*/}
+                {/*</div>*/}
             </div>
             {categoryItems ? createCategoryItems() : <Loader/>}
         </div>

@@ -10,12 +10,21 @@ import styles from './CartPage.module.css'
 
 export const CartPage = observer(() => {
 
+    const [S, setBtnActive] = useState(true)
+    const [isActive, setIsActive] = useState(false)
+    const [cartProducts, setCartProducts] = useState([])
+
+     const btnActive = (products.products.length !== 0)
+    console.log(btnActive)
+
     function makeOrder() {
+
+        if (products.products.length === 0) {
+            setBtnActive(false)
+        }
         setIsActive(!isActive)
     }
 
-    const [isActive, setIsActive] = useState(false)
-    const [cartProducts, setCartProducts] = useState([])
     useEffect(() => {
         const cartItems = products.getProducts()
         setCartProducts(cartItems)
@@ -37,10 +46,10 @@ export const CartPage = observer(() => {
     )
 
     return (
-        <div className={isActive ? styles.containerNoScroll : styles.container}>
+        <div className={styles.container}>
             <div className={styles.title}>Корзина</div>
             <div className={styles.containerCart}>
-                <div className={styles.cartItems}>
+                <div className={btnActive ? styles.cartItems : styles.cartItemsDisabled}>
                     {cartProducts ? (
                         cartProducts.map((product) => (
                             <CartItem
@@ -74,8 +83,8 @@ export const CartPage = observer(() => {
                             {finalPrice} ₽
                         </div>
                     </div>
-                    <button className={styles.btnMakeOrder} onClick={() => makeOrder()}>
-                        Оформление заказа
+                    <button className={btnActive ? styles.btnMakeOrder : styles.btnMakeOrderDisabled} disabled={!btnActive} onClick={() => makeOrder()}>
+                        Оформить заказ
                     </button>
                 </div>
             </div>

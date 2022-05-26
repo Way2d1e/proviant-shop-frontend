@@ -97,8 +97,8 @@ export const MakingOrder = (props) => {
                         <div className={styles.orderInfo}>
                             <div className={styles.textOrderInfo}>
                                 При нажатии на кнопку
-                                <strong>Подтвердить заказ</strong>
-                                на указанную Вами почту прийдет чек.В течении 24
+                                <strong> Подтвердить заказ </strong>
+                                на указанную Вами почту прийдет чек. В течении 24
                                 часов нужно будет прийти в магазин с этим чеком,
                                 оплатить и забрать заказ. Через 24 часа заказ
                                 считается недействительным. Оплата производится
@@ -132,9 +132,7 @@ export const MakingOrder = (props) => {
                         orderNumber={orderNumber}
                         modalOrder={modalOrder}
                     />
-                    <div className={
-                             modalOrder ? styles.hidden : null
-                         }>
+                    <div className={modalOrder ? styles.hidden : null}>
                         <button
                             onClick={() => {
                                 closeModal(false)

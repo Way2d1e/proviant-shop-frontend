@@ -7,16 +7,7 @@ div{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
-.containerNoScroll{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    height: 700px;
 }
 
 .title {
@@ -37,6 +28,26 @@ div{
     flex-direction: column;
     gap: 15px;
     width: 60.87%;
+    max-height: 550px;
+    padding-right: 10px;
+    border-radius: 10px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.cartItems::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+    background: rgba(234, 234, 234, 1);
+}
+
+.cartItems::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #46B14B;
+}
+
+.cartItemsDisabled{
+    opacity: 0;
 }
 
 .finalCheck {
@@ -100,7 +111,7 @@ input::placeholder {
 
 .btnMakeOrder {
     align-self: center;
-    width: 300px;
+    width: 100%;
     height: 50px;
     border: none;
     border-radius: 50px;
@@ -110,6 +121,20 @@ input::placeholder {
     background: #46B14B;
     transition: .5s;
 }
+
+.btnMakeOrderDisabled{
+    align-self: center;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    color: #ffffff;
+    font: 700 16px/22px "Open Sans", sans-serif;
+    cursor: pointer;
+    background: grey;
+    transition: .5s;
+}
+
 
 .line {
     width: 100%;

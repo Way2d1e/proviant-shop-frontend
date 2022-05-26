@@ -1,12 +1,12 @@
 import React from 'react'
 import Ruble from '../../assets/images/ruble.svg'
-import Pshenichka from '../../assets/images/pshenichka.svg'
+import Psenicka from '../../assets/images/pshenichka.svg'
 import Service from '../../assets/images/service.svg'
-import Expirience from '../../assets/images/expirience.svg'
+import Experience from '../../assets/images/expirience.svg'
 import { Slider } from '../../components/Slider'
-import Slide1 from '../../assets/images/slider/ad1.png'
-import Slide2 from '../../assets/images/slider/ad2.png'
-import Slide3 from '../../assets/images/slider/ad3.png'
+import Slide1 from '../../assets/images/slider/slide-1.png'
+import Slide2 from '../../assets/images/slider/slide-2.png'
+import Slide3 from '../../assets/images/slider/slide-3.png'
 
 import styles from './MainPage.module.css'
 
@@ -22,7 +22,7 @@ export const MainPage = () => {
             id: 1,
             title: 'Качество',
             body: 'Только свежие\n' + ' продукты',
-            img: Pshenichka,
+            img: Psenicka,
         },
         {
             id: 2,
@@ -34,7 +34,7 @@ export const MainPage = () => {
             id: 3,
             title: 'Опыт',
             body: 'Более 4-х лет\n' + ' на рынке',
-            img: Expirience,
+            img: Experience,
         },
     ]
 
